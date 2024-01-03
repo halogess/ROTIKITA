@@ -41,6 +41,16 @@ namespace ROTIKITA.Controller
             }
             return DatabaseService.PadLeftZero(KODE_JENIS_ROTI_PREFIX, 1, 10);
         }
+
+        public static int CekDiskon(string kode_roti)
+        {
+            diskon diskon = db.diskons.Where(d=>d.kode_diskon == kode_roti && d.tanggal_mulai >= DateTime.Now && d.tanggal_selesai <= DateTime.Now).FirstOrDefault();
+            if(diskon == null)
+            {
+                return 0;
+            }
+            return (int)diskon.potongan;
+        }
         public static void DeleteAllRoti()
         {
             // Assuming db is your DbContext instance

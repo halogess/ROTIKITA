@@ -63,9 +63,12 @@
             this.label17 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.NamaRoti = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.listRotiGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.qtyNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.keranjangDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // nama_roti_label
@@ -422,11 +425,33 @@
             this.button3.Text = "Struk";
             this.button3.UseVisualStyleBackColor = true;
             // 
-            // FormTransaksi
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.NamaRoti});
+            this.dataGridView1.Location = new System.Drawing.Point(996, 400);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 62;
+            this.dataGridView1.RowTemplate.Height = 28;
+            this.dataGridView1.Size = new System.Drawing.Size(240, 277);
+            this.dataGridView1.TabIndex = 41;
+            // 
+            // NamaRoti
+            // 
+            this.NamaRoti.Frozen = true;
+            this.NamaRoti.HeaderText = "Nama Roti";
+            this.NamaRoti.MinimumWidth = 8;
+            this.NamaRoti.Name = "NamaRoti";
+            this.NamaRoti.ReadOnly = true;
+            this.NamaRoti.Width = 150;
+            // 
+            // Kasir_transaksi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1249, 666);
+            this.ClientSize = new System.Drawing.Size(1249, 689);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.label24);
             this.Controls.Add(this.label23);
@@ -462,6 +487,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.listRotiGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.qtyNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.keranjangDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -503,6 +529,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
         private System.Windows.Forms.DataGridViewTextBoxColumn Expiration;
         private System.Windows.Forms.DataGridViewTextBoxColumn Subtotal;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NamaRoti;
     }
 
 }
