@@ -1,0 +1,208 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="db_rotiModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="dbundle">
+    <Key>
+      <PropertyRef Name="kode_bundle" />
+    </Key>
+    <Property Name="kode_dbundle" Type="varchar" MaxLength="10" />
+    <Property Name="kode_bundle" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="kode_roti" Type="varchar" MaxLength="10" />
+    <Property Name="harga_roti" Type="int" />
+  </EntityType>
+  <EntityType Name="diskon">
+    <Key>
+      <PropertyRef Name="kode_diskon" />
+    </Key>
+    <Property Name="kode_diskon" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="tanggal_mulai" Type="datetime" />
+    <Property Name="tanggal_selesai" Type="datetime" />
+    <Property Name="harga_before" Type="int" />
+    <Property Name="potongan" Type="int" />
+    <Property Name="harga_after" Type="int" />
+    <Property Name="nama" Type="varchar" MaxLength="10" />
+    <Property Name="keterangan" Type="varchar" MaxLength="50" />
+    <Property Name="kode_roti" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="dtrans">
+    <Key>
+      <PropertyRef Name="dtrans_id" />
+    </Key>
+    <Property Name="dtrans_id" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="htrans_id" Type="varchar" MaxLength="10" />
+    <Property Name="kode_roti" Type="varchar" MaxLength="10" />
+    <Property Name="qty" Type="int" />
+    <Property Name="harga" Type="int" />
+    <Property Name="subtotal" Type="int" />
+  </EntityType>
+  <EntityType Name="hbundle">
+    <Key>
+      <PropertyRef Name="kode_bundle" />
+    </Key>
+    <Property Name="kode_bundle" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="tanggal_mulai" Type="datetime" />
+    <Property Name="tanggal_selesai" Type="datetime" />
+    <Property Name="harga_before" Type="int" />
+    <Property Name="potongan" Type="int" />
+    <Property Name="harga_after" Type="int" />
+  </EntityType>
+  <EntityType Name="htrans">
+    <Key>
+      <PropertyRef Name="htrans_id" />
+    </Key>
+    <Property Name="htrans_id" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="user_id" Type="varchar" MaxLength="10" />
+    <Property Name="subtotal" Type="int" />
+    <Property Name="tanggal" Type="date" />
+  </EntityType>
+  <EntityType Name="jenis_roti">
+    <Key>
+      <PropertyRef Name="kode_jenis" />
+    </Key>
+    <Property Name="kode_jenis" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="nama" Type="varchar" MaxLength="50" />
+    <Property Name="exp" Type="int" />
+    <Property Name="status" Type="int" />
+    <Property Name="harga" Type="int" />
+  </EntityType>
+  <EntityType Name="roti">
+    <Key>
+      <PropertyRef Name="kode_roti" />
+    </Key>
+    <Property Name="kode_roti" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="kode_jenis" Type="varchar" MaxLength="10" />
+    <Property Name="created_at" Type="datetime" />
+    <Property Name="expired_at" Type="datetime" />
+    <Property Name="qty" Type="int" />
+  </EntityType>
+  <EntityType Name="users">
+    <Key>
+      <PropertyRef Name="user_id" />
+    </Key>
+    <Property Name="user_id" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="nama" Type="varchar" MaxLength="255" />
+    <Property Name="password" Type="varchar" MaxLength="255" />
+    <Property Name="role" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <Association Name="FKBUNDLE_BUNDLE">
+    <End Role="hbundle" Type="Self.hbundle" Multiplicity="1" />
+    <End Role="dbundle" Type="Self.dbundle" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="hbundle">
+        <PropertyRef Name="kode_bundle" />
+      </Principal>
+      <Dependent Role="dbundle">
+        <PropertyRef Name="kode_bundle" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKDISKON_ROTI">
+    <End Role="roti" Type="Self.roti" Multiplicity="0..1" />
+    <End Role="diskon" Type="Self.diskon" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="roti">
+        <PropertyRef Name="kode_roti" />
+      </Principal>
+      <Dependent Role="diskon">
+        <PropertyRef Name="kode_roti" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKHTRANS_ROTI">
+    <End Role="htrans" Type="Self.htrans" Multiplicity="0..1" />
+    <End Role="dtrans" Type="Self.dtrans" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="htrans">
+        <PropertyRef Name="htrans_id" />
+      </Principal>
+      <Dependent Role="dtrans">
+        <PropertyRef Name="htrans_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKJENIS_ROTI">
+    <End Role="jenis_roti" Type="Self.jenis_roti" Multiplicity="0..1" />
+    <End Role="roti" Type="Self.roti" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="jenis_roti">
+        <PropertyRef Name="kode_jenis" />
+      </Principal>
+      <Dependent Role="roti">
+        <PropertyRef Name="kode_jenis" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKKODE_ROTI_HTRANS">
+    <End Role="roti" Type="Self.roti" Multiplicity="0..1" />
+    <End Role="dtrans" Type="Self.dtrans" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="roti">
+        <PropertyRef Name="kode_roti" />
+      </Principal>
+      <Dependent Role="dtrans">
+        <PropertyRef Name="kode_roti" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKPRODUCT_ROTI">
+    <End Role="roti" Type="Self.roti" Multiplicity="0..1" />
+    <End Role="dbundle" Type="Self.dbundle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="roti">
+        <PropertyRef Name="kode_roti" />
+      </Principal>
+      <Dependent Role="dbundle">
+        <PropertyRef Name="kode_roti" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKUSER_ROTI">
+    <End Role="users" Type="Self.users" Multiplicity="0..1" />
+    <End Role="htrans" Type="Self.htrans" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="users">
+        <PropertyRef Name="user_id" />
+      </Principal>
+      <Dependent Role="htrans">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="db_rotiModelStoreContainer">
+    <EntitySet Name="dbundle" EntityType="Self.dbundle" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="diskon" EntityType="Self.diskon" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="dtrans" EntityType="Self.dtrans" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="hbundle" EntityType="Self.hbundle" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="htrans" EntityType="Self.htrans" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="jenis_roti" EntityType="Self.jenis_roti" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="roti" EntityType="Self.roti" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="users" EntityType="Self.users" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FKBUNDLE_BUNDLE" Association="Self.FKBUNDLE_BUNDLE">
+      <End Role="hbundle" EntitySet="hbundle" />
+      <End Role="dbundle" EntitySet="dbundle" />
+    </AssociationSet>
+    <AssociationSet Name="FKDISKON_ROTI" Association="Self.FKDISKON_ROTI">
+      <End Role="roti" EntitySet="roti" />
+      <End Role="diskon" EntitySet="diskon" />
+    </AssociationSet>
+    <AssociationSet Name="FKHTRANS_ROTI" Association="Self.FKHTRANS_ROTI">
+      <End Role="htrans" EntitySet="htrans" />
+      <End Role="dtrans" EntitySet="dtrans" />
+    </AssociationSet>
+    <AssociationSet Name="FKJENIS_ROTI" Association="Self.FKJENIS_ROTI">
+      <End Role="jenis_roti" EntitySet="jenis_roti" />
+      <End Role="roti" EntitySet="roti" />
+    </AssociationSet>
+    <AssociationSet Name="FKKODE_ROTI_HTRANS" Association="Self.FKKODE_ROTI_HTRANS">
+      <End Role="roti" EntitySet="roti" />
+      <End Role="dtrans" EntitySet="dtrans" />
+    </AssociationSet>
+    <AssociationSet Name="FKPRODUCT_ROTI" Association="Self.FKPRODUCT_ROTI">
+      <End Role="roti" EntitySet="roti" />
+      <End Role="dbundle" EntitySet="dbundle" />
+    </AssociationSet>
+    <AssociationSet Name="FKUSER_ROTI" Association="Self.FKUSER_ROTI">
+      <End Role="users" EntitySet="users" />
+      <End Role="htrans" EntitySet="htrans" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

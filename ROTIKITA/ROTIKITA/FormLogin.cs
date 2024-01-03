@@ -29,6 +29,10 @@ namespace ROTIKITA
                 UserHandler.nama = "Owner";
                 UserHandler.user_ID = "OWNER00000";
                 UserHandler.role = "Owner";
+                Owner_menu form = new Owner_menu();
+                Hide();
+                form.ShowDialog();
+                Show();
                 //MainForm mainForm = new MainForm("Owner");
                 //mainForm.ShowDialog();
             }
@@ -40,6 +44,18 @@ namespace ROTIKITA
                 }
                 else
                 {
+                    Hide();
+                    if (UserHandler.role == "Admin")
+                    {
+                        Admin_menu admin_Menu = new Admin_menu();
+                        admin_Menu.ShowDialog();
+
+                    } else
+                    {
+                        Kasir_menu kasir_Menu = new Kasir_menu();
+                        kasir_Menu.ShowDialog();
+                    }
+                    Show();
                     //MainForm mainForm = new MainForm(UserHandler.role, UserHandler.nama);
                     //mainForm.ShowDialog();
                 }
