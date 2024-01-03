@@ -89,7 +89,10 @@ namespace ROTIKITA
                 AddNewItemToCart(kode_roti, jenis_roti, harga_label, quantity_label, tanggal_expired);
             }
             int diskonValue = RotiHandler.CekDiskon(kode_roti);
-
+            if(diskonValue != 0)
+            {
+                diskonDataGridView.Rows.Add(kode_roti, jenis_roti,diskonValue);
+            }
             UpdateCartSummary();
         }
 

@@ -59,16 +59,17 @@
             this.jumlahItemLabel = new System.Windows.Forms.Label();
             this.totalHargaLabel = new System.Windows.Forms.Label();
             this.butButton = new System.Windows.Forms.Button();
-            this.label23 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.diskonDataGridView = new System.Windows.Forms.DataGridView();
+            this.KodeRoti_Diskon = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NamaRoti = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Potongan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.listRotiGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.qtyNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.keranjangDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.diskonDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // nama_roti_label
@@ -385,16 +386,6 @@
             this.butButton.UseVisualStyleBackColor = true;
             this.butButton.Click += new System.EventHandler(this.butButton_Click);
             // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(462, 442);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(71, 24);
-            this.label23.TabIndex = 37;
-            this.label23.Text = "Diskon";
-            // 
             // label17
             // 
             this.label17.AutoSize = true;
@@ -404,16 +395,6 @@
             this.label17.Size = new System.Drawing.Size(79, 24);
             this.label17.TabIndex = 31;
             this.label17.Text = "TOTAL";
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(538, 442);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(21, 24);
-            this.label24.TabIndex = 39;
-            this.label24.Text = "0";
             // 
             // button3
             // 
@@ -425,36 +406,60 @@
             this.button3.Text = "Struk";
             this.button3.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // diskonDataGridView
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.NamaRoti});
-            this.dataGridView1.Location = new System.Drawing.Point(996, 400);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(240, 277);
-            this.dataGridView1.TabIndex = 41;
+            this.diskonDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.diskonDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.diskonDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.KodeRoti_Diskon,
+            this.NamaRoti,
+            this.Potongan});
+            this.diskonDataGridView.Location = new System.Drawing.Point(916, 442);
+            this.diskonDataGridView.Name = "diskonDataGridView";
+            this.diskonDataGridView.RowHeadersVisible = false;
+            this.diskonDataGridView.RowHeadersWidth = 62;
+            this.diskonDataGridView.RowTemplate.Height = 28;
+            this.diskonDataGridView.Size = new System.Drawing.Size(320, 235);
+            this.diskonDataGridView.TabIndex = 41;
+            // 
+            // KodeRoti_Diskon
+            // 
+            this.KodeRoti_Diskon.HeaderText = "Kode Roti";
+            this.KodeRoti_Diskon.MinimumWidth = 8;
+            this.KodeRoti_Diskon.Name = "KodeRoti_Diskon";
             // 
             // NamaRoti
             // 
-            this.NamaRoti.Frozen = true;
             this.NamaRoti.HeaderText = "Nama Roti";
             this.NamaRoti.MinimumWidth = 8;
             this.NamaRoti.Name = "NamaRoti";
             this.NamaRoti.ReadOnly = true;
-            this.NamaRoti.Width = 150;
+            // 
+            // Potongan
+            // 
+            this.Potongan.HeaderText = "Potongan";
+            this.Potongan.MinimumWidth = 8;
+            this.Potongan.Name = "Potongan";
+            this.Potongan.ReadOnly = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(911, 388);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(141, 36);
+            this.label1.TabIndex = 43;
+            this.label1.Text = "DISKON";
             // 
             // Kasir_transaksi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1249, 689);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.diskonDataGridView);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.label24);
-            this.Controls.Add(this.label23);
             this.Controls.Add(this.butButton);
             this.Controls.Add(this.label20);
             this.Controls.Add(this.hargaLabel);
@@ -487,7 +492,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.listRotiGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.qtyNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.keranjangDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.diskonDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -519,9 +524,7 @@
         private System.Windows.Forms.Label jumlahItemLabel;
         private System.Windows.Forms.Label totalHargaLabel;
         private System.Windows.Forms.Button butButton;
-        private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.DataGridViewTextBoxColumn KodeRoti;
         private System.Windows.Forms.DataGridViewTextBoxColumn Name;
@@ -529,8 +532,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
         private System.Windows.Forms.DataGridViewTextBoxColumn Expiration;
         private System.Windows.Forms.DataGridViewTextBoxColumn Subtotal;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView diskonDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn KodeRoti_Diskon;
         private System.Windows.Forms.DataGridViewTextBoxColumn NamaRoti;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Potongan;
+        private System.Windows.Forms.Label label1;
     }
 
 }
