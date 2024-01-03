@@ -52,20 +52,24 @@
             this.dgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgv.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv.Location = new System.Drawing.Point(366, 33);
+            this.dgv.GridColor = System.Drawing.Color.Black;
+            this.dgv.Location = new System.Drawing.Point(585, 51);
+            this.dgv.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dgv.Name = "dgv";
             this.dgv.RowHeadersVisible = false;
+            this.dgv.RowHeadersWidth = 62;
             this.dgv.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv.Size = new System.Drawing.Size(511, 222);
+            this.dgv.Size = new System.Drawing.Size(766, 342);
             this.dgv.TabIndex = 1;
             this.dgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_CellContentClick);
             // 
             // num
             // 
-            this.num.Location = new System.Drawing.Point(78, 31);
+            this.num.Location = new System.Drawing.Point(117, 48);
+            this.num.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.num.Name = "num";
-            this.num.Size = new System.Drawing.Size(110, 20);
+            this.num.Size = new System.Drawing.Size(165, 26);
             this.num.TabIndex = 2;
             this.num.ValueChanged += new System.EventHandler(this.num_ValueChanged);
             // 
@@ -75,9 +79,10 @@
             this.comboBox.Items.AddRange(new object[] {
             "%",
             "Rupiah"});
-            this.comboBox.Location = new System.Drawing.Point(194, 30);
+            this.comboBox.Location = new System.Drawing.Point(291, 46);
+            this.comboBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.comboBox.Name = "comboBox";
-            this.comboBox.Size = new System.Drawing.Size(84, 21);
+            this.comboBox.Size = new System.Drawing.Size(124, 28);
             this.comboBox.TabIndex = 3;
             this.comboBox.SelectedIndexChanged += new System.EventHandler(this.comboBox_SelectedIndexChanged);
             // 
@@ -91,74 +96,87 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.num);
             this.groupBox1.Controls.Add(this.comboBox);
-            this.groupBox1.Location = new System.Drawing.Point(48, 29);
+            this.groupBox1.Location = new System.Drawing.Point(72, 45);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(295, 226);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox1.Size = new System.Drawing.Size(442, 348);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             // 
             // btn_simpan
             // 
-            this.btn_simpan.Location = new System.Drawing.Point(15, 172);
+            this.btn_simpan.BackColor = System.Drawing.Color.Black;
+            this.btn_simpan.ForeColor = System.Drawing.Color.White;
+            this.btn_simpan.Location = new System.Drawing.Point(22, 265);
+            this.btn_simpan.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_simpan.Name = "btn_simpan";
-            this.btn_simpan.Size = new System.Drawing.Size(263, 33);
+            this.btn_simpan.Size = new System.Drawing.Size(394, 51);
             this.btn_simpan.TabIndex = 9;
             this.btn_simpan.Text = "Simpan";
-            this.btn_simpan.UseVisualStyleBackColor = true;
+            this.btn_simpan.UseVisualStyleBackColor = false;
             this.btn_simpan.Click += new System.EventHandler(this.btn_simpan_Click);
             // 
             // keterangan
             // 
-            this.keterangan.Location = new System.Drawing.Point(78, 100);
+            this.keterangan.Location = new System.Drawing.Point(117, 154);
+            this.keterangan.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.keterangan.Multiline = true;
             this.keterangan.Name = "keterangan";
-            this.keterangan.Size = new System.Drawing.Size(200, 54);
+            this.keterangan.Size = new System.Drawing.Size(298, 81);
             this.keterangan.TabIndex = 8;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 100);
+            this.label3.Location = new System.Drawing.Point(18, 154);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(62, 13);
+            this.label3.Size = new System.Drawing.Size(92, 20);
             this.label3.TabIndex = 7;
             this.label3.Text = "Keterangan";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 67);
+            this.label2.Location = new System.Drawing.Point(18, 103);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(32, 13);
+            this.label2.Size = new System.Drawing.Size(46, 20);
             this.label2.TabIndex = 6;
             this.label2.Text = "Mulai";
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(78, 67);
+            this.dateTimePicker1.Location = new System.Drawing.Point(117, 103);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker1.Size = new System.Drawing.Size(298, 26);
             this.dateTimePicker1.TabIndex = 5;
             this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 33);
+            this.label1.Location = new System.Drawing.Point(18, 51);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(40, 13);
+            this.label1.Size = new System.Drawing.Size(58, 20);
             this.label1.TabIndex = 4;
             this.label1.Text = "Diskon";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // DialogDiskon
+            // Admin_diskon_dialog
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(926, 450);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(189)))), ((int)(((byte)(51)))));
+            this.ClientSize = new System.Drawing.Size(1389, 444);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dgv);
-            this.Name = "DialogDiskon";
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Name = "Admin_diskon_dialog";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.DialogDiskon_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();

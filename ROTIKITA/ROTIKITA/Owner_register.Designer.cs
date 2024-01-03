@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Owner_register));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -47,7 +46,7 @@
             this.label1.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(113, 59);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(154, 22);
+            this.label1.Size = new System.Drawing.Size(217, 32);
             this.label1.TabIndex = 0;
             this.label1.Text = "Register Pegawai";
             // 
@@ -57,7 +56,7 @@
             this.label2.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(52, 135);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(56, 17);
+            this.label2.Size = new System.Drawing.Size(76, 23);
             this.label2.TabIndex = 1;
             this.label2.Text = "Nama : ";
             // 
@@ -67,7 +66,7 @@
             this.label3.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(21, 192);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(77, 17);
+            this.label3.Size = new System.Drawing.Size(107, 23);
             this.label3.TabIndex = 2;
             this.label3.Text = "Password : ";
             // 
@@ -88,14 +87,14 @@
             // 
             this.TBNamaPegawai.Location = new System.Drawing.Point(135, 135);
             this.TBNamaPegawai.Name = "TBNamaPegawai";
-            this.TBNamaPegawai.Size = new System.Drawing.Size(238, 20);
+            this.TBNamaPegawai.Size = new System.Drawing.Size(238, 26);
             this.TBNamaPegawai.TabIndex = 4;
             // 
             // TBPassPegawai
             // 
             this.TBPassPegawai.Location = new System.Drawing.Point(135, 192);
             this.TBPassPegawai.Name = "TBPassPegawai";
-            this.TBPassPegawai.Size = new System.Drawing.Size(238, 20);
+            this.TBPassPegawai.Size = new System.Drawing.Size(238, 26);
             this.TBPassPegawai.TabIndex = 5;
             // 
             // kasirRadioButton
@@ -103,7 +102,7 @@
             this.kasirRadioButton.AutoSize = true;
             this.kasirRadioButton.Location = new System.Drawing.Point(56, 241);
             this.kasirRadioButton.Name = "kasirRadioButton";
-            this.kasirRadioButton.Size = new System.Drawing.Size(48, 17);
+            this.kasirRadioButton.Size = new System.Drawing.Size(69, 24);
             this.kasirRadioButton.TabIndex = 6;
             this.kasirRadioButton.TabStop = true;
             this.kasirRadioButton.Text = "Kasir";
@@ -114,7 +113,7 @@
             this.adminRadioButton.AutoSize = true;
             this.adminRadioButton.Location = new System.Drawing.Point(279, 241);
             this.adminRadioButton.Name = "adminRadioButton";
-            this.adminRadioButton.Size = new System.Drawing.Size(54, 17);
+            this.adminRadioButton.Size = new System.Drawing.Size(79, 24);
             this.adminRadioButton.TabIndex = 7;
             this.adminRadioButton.TabStop = true;
             this.adminRadioButton.Text = "Admin";
@@ -128,6 +127,7 @@
             this.listPegawaiView.AllowUserToResizeRows = false;
             this.listPegawaiView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.listPegawaiView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.listPegawaiView.GridColor = System.Drawing.Color.Black;
             this.listPegawaiView.Location = new System.Drawing.Point(398, 23);
             this.listPegawaiView.Name = "listPegawaiView";
             this.listPegawaiView.ReadOnly = true;
@@ -137,7 +137,7 @@
             this.listPegawaiView.Size = new System.Drawing.Size(473, 359);
             this.listPegawaiView.TabIndex = 8;
             // 
-            // FormRegister
+            // Owner_register
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(189)))), ((int)(((byte)(51)))));
@@ -152,8 +152,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "FormRegister";
+            this.Name = "Owner_register";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormRegister";
             ((System.ComponentModel.ISupportInitialize)(this.listPegawaiView)).EndInit();

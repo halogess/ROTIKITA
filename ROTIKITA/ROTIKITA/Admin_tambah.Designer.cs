@@ -65,6 +65,7 @@
             this.jenisRotiGriwView.AllowUserToResizeRows = false;
             this.jenisRotiGriwView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.jenisRotiGriwView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.jenisRotiGriwView.GridColor = System.Drawing.Color.Black;
             this.jenisRotiGriwView.Location = new System.Drawing.Point(19, 46);
             this.jenisRotiGriwView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.jenisRotiGriwView.Name = "jenisRotiGriwView";
@@ -185,13 +186,15 @@
             // 
             // addRotiButton
             // 
-            this.addRotiButton.Location = new System.Drawing.Point(457, 289);
+            this.addRotiButton.BackColor = System.Drawing.Color.Black;
+            this.addRotiButton.ForeColor = System.Drawing.Color.White;
+            this.addRotiButton.Location = new System.Drawing.Point(457, 278);
             this.addRotiButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.addRotiButton.Name = "addRotiButton";
             this.addRotiButton.Size = new System.Drawing.Size(324, 42);
             this.addRotiButton.TabIndex = 16;
             this.addRotiButton.Text = "Add Roti";
-            this.addRotiButton.UseVisualStyleBackColor = true;
+            this.addRotiButton.UseVisualStyleBackColor = false;
             this.addRotiButton.Click += new System.EventHandler(this.addRotiButton_Click);
             // 
             // labelJenisRoti
@@ -213,13 +216,14 @@
             this.listRotiGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.listRotiGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.listRotiGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.listRotiGridView.Location = new System.Drawing.Point(845, 38);
+            this.listRotiGridView.GridColor = System.Drawing.Color.Black;
+            this.listRotiGridView.Location = new System.Drawing.Point(856, 38);
             this.listRotiGridView.Name = "listRotiGridView";
             this.listRotiGridView.ReadOnly = true;
             this.listRotiGridView.RowHeadersVisible = false;
             this.listRotiGridView.RowHeadersWidth = 62;
             this.listRotiGridView.RowTemplate.Height = 28;
-            this.listRotiGridView.Size = new System.Drawing.Size(712, 394);
+            this.listRotiGridView.Size = new System.Drawing.Size(712, 404);
             this.listRotiGridView.TabIndex = 18;
             this.listRotiGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.listRotiGridView_CellClick);
             // 
@@ -235,13 +239,15 @@
             // 
             // editRotiButton
             // 
-            this.editRotiButton.Location = new System.Drawing.Point(457, 356);
+            this.editRotiButton.BackColor = System.Drawing.Color.Black;
+            this.editRotiButton.ForeColor = System.Drawing.Color.White;
+            this.editRotiButton.Location = new System.Drawing.Point(457, 336);
             this.editRotiButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.editRotiButton.Name = "editRotiButton";
             this.editRotiButton.Size = new System.Drawing.Size(324, 42);
             this.editRotiButton.TabIndex = 20;
             this.editRotiButton.Text = "Edit Roti";
-            this.editRotiButton.UseVisualStyleBackColor = true;
+            this.editRotiButton.UseVisualStyleBackColor = false;
             this.editRotiButton.Click += new System.EventHandler(this.editRotiButton_Click);
             // 
             // TBJenisRoti
@@ -283,20 +289,23 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(636, 406);
+            this.button1.BackColor = System.Drawing.Color.Black;
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(457, 400);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(194, 42);
+            this.button1.Size = new System.Drawing.Size(324, 42);
             this.button1.TabIndex = 25;
             this.button1.Text = "DELETE";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // FormTambahRoti
+            // Admin_tambah
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1582, 450);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(189)))), ((int)(((byte)(51)))));
+            this.ClientSize = new System.Drawing.Size(1582, 459);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.TBKodeRoti);
             this.Controls.Add(this.labelKodeRoti);
@@ -312,7 +321,7 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.jenisRotiGriwView);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "FormTambahRoti";
+            this.Name = "Admin_tambah";
             this.Text = "FormTambahRoti";
             this.Load += new System.EventHandler(this.FormTambahRoti_Load);
             ((System.ComponentModel.ISupportInitialize)(this.jenisRotiGriwView)).EndInit();

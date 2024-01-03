@@ -44,9 +44,9 @@
             // 
             // addPanel
             // 
-            this.addPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            this.addPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.addPanel.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.addPanel.BackColor = System.Drawing.Color.Silver;
             this.addPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.addPanel.Controls.Add(this.clearButton);
             this.addPanel.Controls.Add(this.deleteButton);
@@ -60,48 +60,56 @@
             this.addPanel.Controls.Add(this.label1);
             this.addPanel.Location = new System.Drawing.Point(0, 0);
             this.addPanel.Name = "addPanel";
-            this.addPanel.Size = new System.Drawing.Size(399, 450);
+            this.addPanel.Size = new System.Drawing.Size(399, 459);
             this.addPanel.TabIndex = 6;
             this.addPanel.Click += new System.EventHandler(this.addPanel_Click);
             // 
             // clearButton
             // 
+            this.clearButton.BackColor = System.Drawing.Color.Black;
+            this.clearButton.ForeColor = System.Drawing.Color.White;
             this.clearButton.Location = new System.Drawing.Point(227, 401);
             this.clearButton.Name = "clearButton";
             this.clearButton.Size = new System.Drawing.Size(150, 37);
             this.clearButton.TabIndex = 9;
             this.clearButton.Text = "Clear";
-            this.clearButton.UseVisualStyleBackColor = true;
+            this.clearButton.UseVisualStyleBackColor = false;
             this.clearButton.Click += new System.EventHandler(this.clearButton_Click);
             // 
             // deleteButton
             // 
+            this.deleteButton.BackColor = System.Drawing.Color.Black;
+            this.deleteButton.ForeColor = System.Drawing.Color.White;
             this.deleteButton.Location = new System.Drawing.Point(20, 401);
             this.deleteButton.Name = "deleteButton";
             this.deleteButton.Size = new System.Drawing.Size(150, 37);
             this.deleteButton.TabIndex = 8;
             this.deleteButton.Text = "Delete";
-            this.deleteButton.UseVisualStyleBackColor = true;
+            this.deleteButton.UseVisualStyleBackColor = false;
             this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
             // 
             // updateButton
             // 
+            this.updateButton.BackColor = System.Drawing.Color.Black;
+            this.updateButton.ForeColor = System.Drawing.Color.White;
             this.updateButton.Location = new System.Drawing.Point(227, 348);
             this.updateButton.Name = "updateButton";
             this.updateButton.Size = new System.Drawing.Size(150, 37);
             this.updateButton.TabIndex = 7;
             this.updateButton.Text = "Update";
-            this.updateButton.UseVisualStyleBackColor = true;
+            this.updateButton.UseVisualStyleBackColor = false;
             this.updateButton.Click += new System.EventHandler(this.updateButton_Click);
             // 
             // insertButton
             // 
+            this.insertButton.BackColor = System.Drawing.Color.Black;
+            this.insertButton.ForeColor = System.Drawing.Color.White;
             this.insertButton.Location = new System.Drawing.Point(20, 348);
             this.insertButton.Name = "insertButton";
             this.insertButton.Size = new System.Drawing.Size(150, 37);
             this.insertButton.TabIndex = 6;
             this.insertButton.Text = "Insert";
-            this.insertButton.UseVisualStyleBackColor = true;
+            this.insertButton.UseVisualStyleBackColor = false;
             this.insertButton.Click += new System.EventHandler(this.insertButton_Click);
             // 
             // hargaTextBox
@@ -158,12 +166,13 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Expired :";
             // 
-            // FormDaftarRoti
+            // Admin_daftar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1162, 450);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(189)))), ((int)(((byte)(51)))));
+            this.ClientSize = new System.Drawing.Size(1162, 459);
             this.Controls.Add(this.addPanel);
             this.Name = "Admin_daftar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

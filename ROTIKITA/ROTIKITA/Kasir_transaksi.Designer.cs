@@ -76,7 +76,7 @@
             // 
             this.nama_roti_label.AutoSize = true;
             this.nama_roti_label.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nama_roti_label.Location = new System.Drawing.Point(19, 388);
+            this.nama_roti_label.Location = new System.Drawing.Point(69, 408);
             this.nama_roti_label.Name = "nama_roti_label";
             this.nama_roti_label.Size = new System.Drawing.Size(195, 36);
             this.nama_roti_label.TabIndex = 7;
@@ -86,7 +86,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(21, 442);
+            this.label2.Location = new System.Drawing.Point(71, 462);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(97, 23);
             this.label2.TabIndex = 8;
@@ -100,7 +100,8 @@
             this.listRotiGridView.AllowUserToResizeRows = false;
             this.listRotiGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.listRotiGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.listRotiGridView.Location = new System.Drawing.Point(26, 81);
+            this.listRotiGridView.GridColor = System.Drawing.Color.Black;
+            this.listRotiGridView.Location = new System.Drawing.Point(75, 81);
             this.listRotiGridView.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.listRotiGridView.Name = "listRotiGridView";
             this.listRotiGridView.ReadOnly = true;
@@ -115,7 +116,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(19, 22);
+            this.label10.Location = new System.Drawing.Point(246, 22);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(234, 36);
             this.label10.TabIndex = 18;
@@ -125,7 +126,7 @@
             // 
             this.kodeRotiLabel.AutoSize = true;
             this.kodeRotiLabel.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.kodeRotiLabel.Location = new System.Drawing.Point(248, 442);
+            this.kodeRotiLabel.Location = new System.Drawing.Point(298, 462);
             this.kodeRotiLabel.Name = "kodeRotiLabel";
             this.kodeRotiLabel.Size = new System.Drawing.Size(0, 23);
             this.kodeRotiLabel.TabIndex = 19;
@@ -134,7 +135,7 @@
             // 
             this.namaJenisRoti.AutoSize = true;
             this.namaJenisRoti.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.namaJenisRoti.Location = new System.Drawing.Point(248, 489);
+            this.namaJenisRoti.Location = new System.Drawing.Point(298, 509);
             this.namaJenisRoti.Name = "namaJenisRoti";
             this.namaJenisRoti.Size = new System.Drawing.Size(0, 23);
             this.namaJenisRoti.TabIndex = 21;
@@ -143,7 +144,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(21, 489);
+            this.label13.Location = new System.Drawing.Point(71, 509);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(93, 23);
             this.label13.TabIndex = 20;
@@ -153,7 +154,7 @@
             // 
             this.tanggalExpiredLabel.AutoSize = true;
             this.tanggalExpiredLabel.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tanggalExpiredLabel.Location = new System.Drawing.Point(248, 539);
+            this.tanggalExpiredLabel.Location = new System.Drawing.Point(298, 559);
             this.tanggalExpiredLabel.Name = "tanggalExpiredLabel";
             this.tanggalExpiredLabel.Size = new System.Drawing.Size(0, 23);
             this.tanggalExpiredLabel.TabIndex = 23;
@@ -162,7 +163,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(21, 539);
+            this.label5.Location = new System.Drawing.Point(71, 559);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(95, 23);
             this.label5.TabIndex = 22;
@@ -172,7 +173,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(225, 442);
+            this.label7.Location = new System.Drawing.Point(275, 462);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(16, 23);
             this.label7.TabIndex = 25;
@@ -182,7 +183,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(225, 489);
+            this.label8.Location = new System.Drawing.Point(275, 509);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(16, 23);
             this.label8.TabIndex = 26;
@@ -192,7 +193,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(225, 539);
+            this.label9.Location = new System.Drawing.Point(275, 559);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(16, 23);
             this.label9.TabIndex = 27;
@@ -202,7 +203,7 @@
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(24, 631);
+            this.label19.Location = new System.Drawing.Point(74, 651);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(60, 23);
             this.label19.TabIndex = 33;
@@ -212,7 +213,7 @@
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(225, 631);
+            this.label20.Location = new System.Drawing.Point(275, 651);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(16, 23);
             this.label20.TabIndex = 35;
@@ -222,14 +223,14 @@
             // 
             this.hargaLabel.AutoSize = true;
             this.hargaLabel.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.hargaLabel.Location = new System.Drawing.Point(248, 631);
+            this.hargaLabel.Location = new System.Drawing.Point(298, 651);
             this.hargaLabel.Name = "hargaLabel";
             this.hargaLabel.Size = new System.Drawing.Size(0, 23);
             this.hargaLabel.TabIndex = 34;
             // 
             // qtyNumericUpDown
             // 
-            this.qtyNumericUpDown.Location = new System.Drawing.Point(252, 589);
+            this.qtyNumericUpDown.Location = new System.Drawing.Point(302, 609);
             this.qtyNumericUpDown.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.qtyNumericUpDown.Name = "qtyNumericUpDown";
             this.qtyNumericUpDown.Size = new System.Drawing.Size(73, 26);
@@ -239,7 +240,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(21, 589);
+            this.label6.Location = new System.Drawing.Point(71, 609);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(40, 23);
             this.label6.TabIndex = 24;
@@ -249,7 +250,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(225, 589);
+            this.label14.Location = new System.Drawing.Point(275, 609);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(16, 23);
             this.label14.TabIndex = 28;
@@ -257,13 +258,15 @@
             // 
             // addToCartButton
             // 
-            this.addToCartButton.Location = new System.Drawing.Point(519, 579);
+            this.addToCartButton.BackColor = System.Drawing.Color.Black;
+            this.addToCartButton.ForeColor = System.Drawing.Color.White;
+            this.addToCartButton.Location = new System.Drawing.Point(130, 745);
             this.addToCartButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.addToCartButton.Name = "addToCartButton";
             this.addToCartButton.Size = new System.Drawing.Size(84, 72);
             this.addToCartButton.TabIndex = 16;
             this.addToCartButton.Text = "Add Cart";
-            this.addToCartButton.UseVisualStyleBackColor = true;
+            this.addToCartButton.UseVisualStyleBackColor = false;
             this.addToCartButton.Click += new System.EventHandler(this.addToCartButton_Click);
             // 
             // keranjangDataGridView
@@ -281,7 +284,8 @@
             this.Quantity,
             this.Expiration,
             this.Subtotal});
-            this.keranjangDataGridView.Location = new System.Drawing.Point(654, 81);
+            this.keranjangDataGridView.GridColor = System.Drawing.Color.Black;
+            this.keranjangDataGridView.Location = new System.Drawing.Point(838, 81);
             this.keranjangDataGridView.Margin = new System.Windows.Forms.Padding(0);
             this.keranjangDataGridView.Name = "keranjangDataGridView";
             this.keranjangDataGridView.ReadOnly = true;
@@ -338,7 +342,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(647, 22);
+            this.label3.Location = new System.Drawing.Point(1028, 22);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(217, 36);
             this.label3.TabIndex = 5;
@@ -350,7 +354,7 @@
             this.label15.AllowDrop = true;
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(649, 400);
+            this.label15.Location = new System.Drawing.Point(491, 442);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(117, 23);
             this.label15.TabIndex = 29;
@@ -360,7 +364,7 @@
             // 
             this.jumlahItemLabel.AutoSize = true;
             this.jumlahItemLabel.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.jumlahItemLabel.Location = new System.Drawing.Point(772, 400);
+            this.jumlahItemLabel.Location = new System.Drawing.Point(628, 443);
             this.jumlahItemLabel.Name = "jumlahItemLabel";
             this.jumlahItemLabel.Size = new System.Drawing.Size(21, 23);
             this.jumlahItemLabel.TabIndex = 30;
@@ -377,20 +381,22 @@
             // 
             // butButton
             // 
-            this.butButton.Location = new System.Drawing.Point(654, 579);
+            this.butButton.BackColor = System.Drawing.Color.Black;
+            this.butButton.ForeColor = System.Drawing.Color.White;
+            this.butButton.Location = new System.Drawing.Point(343, 745);
             this.butButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.butButton.Name = "butButton";
             this.butButton.Size = new System.Drawing.Size(84, 72);
             this.butButton.TabIndex = 36;
             this.butButton.Text = "Buy";
-            this.butButton.UseVisualStyleBackColor = true;
+            this.butButton.UseVisualStyleBackColor = false;
             this.butButton.Click += new System.EventHandler(this.butButton_Click);
             // 
             // label17
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(649, 465);
+            this.label17.Location = new System.Drawing.Point(491, 508);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(79, 24);
             this.label17.TabIndex = 31;
@@ -398,13 +404,15 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(745, 579);
+            this.button3.BackColor = System.Drawing.Color.Black;
+            this.button3.ForeColor = System.Drawing.Color.White;
+            this.button3.Location = new System.Drawing.Point(546, 745);
             this.button3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(84, 72);
             this.button3.TabIndex = 40;
             this.button3.Text = "Struk";
-            this.button3.UseVisualStyleBackColor = true;
+            this.button3.UseVisualStyleBackColor = false;
             // 
             // diskonDataGridView
             // 
@@ -414,12 +422,13 @@
             this.KodeRoti_Diskon,
             this.NamaRoti,
             this.Potongan});
-            this.diskonDataGridView.Location = new System.Drawing.Point(916, 442);
+            this.diskonDataGridView.GridColor = System.Drawing.Color.Black;
+            this.diskonDataGridView.Location = new System.Drawing.Point(838, 492);
             this.diskonDataGridView.Name = "diskonDataGridView";
             this.diskonDataGridView.RowHeadersVisible = false;
             this.diskonDataGridView.RowHeadersWidth = 62;
             this.diskonDataGridView.RowTemplate.Height = 28;
-            this.diskonDataGridView.Size = new System.Drawing.Size(320, 235);
+            this.diskonDataGridView.Size = new System.Drawing.Size(582, 325);
             this.diskonDataGridView.TabIndex = 41;
             // 
             // KodeRoti_Diskon
@@ -446,7 +455,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(911, 388);
+            this.label1.Location = new System.Drawing.Point(1063, 431);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(141, 36);
             this.label1.TabIndex = 43;
@@ -456,7 +465,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1249, 689);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(189)))), ((int)(((byte)(51)))));
+            this.ClientSize = new System.Drawing.Size(1506, 837);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.diskonDataGridView);
             this.Controls.Add(this.button3);
@@ -487,6 +497,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.keranjangDataGridView);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Name = "Kasir_transaksi";
             this.Text = "FormTransaksi";
             this.Load += new System.EventHandler(this.FormTransaksi_Load);
             ((System.ComponentModel.ISupportInitialize)(this.listRotiGridView)).EndInit();
