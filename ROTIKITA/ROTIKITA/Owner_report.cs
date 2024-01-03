@@ -21,5 +21,18 @@ namespace ROTIKITA
         {
 
         }
+
+        private void startDateTimePicker_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            CrystalReport1  cr = new CrystalReport1();
+            cr.SetParameterValue("Awal", startDateTimePicker.Value);
+            cr.SetParameterValue("Akhir", endDateTimePicker.Value);
+            crystalReportViewer1.ReportSource = cr;
+        }
     }
 }
