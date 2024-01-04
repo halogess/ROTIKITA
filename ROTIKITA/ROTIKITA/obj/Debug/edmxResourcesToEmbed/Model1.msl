@@ -1,19 +1,36 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="db_rotiModelStoreContainer" CdmEntityContainer="db_rotiEntities">
+    <EntitySetMapping Name="buangs">
+      <EntityTypeMapping TypeName="db_rotiModel.buang">
+        <MappingFragment StoreEntitySet="buangs">
+          <ScalarProperty Name="kode_buang" ColumnName="kode_buang" />
+          <ScalarProperty Name="kode_roti" ColumnName="kode_roti" />
+          <ScalarProperty Name="kode_jenis" ColumnName="kode_jenis" />
+          <ScalarProperty Name="nama_roti" ColumnName="nama_roti" />
+          <ScalarProperty Name="harga" ColumnName="harga" />
+          <ScalarProperty Name="qty" ColumnName="qty" />
+          <ScalarProperty Name="subtotal" ColumnName="subtotal" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+          <ScalarProperty Name="expired_at" ColumnName="expired_at" />
+          <ScalarProperty Name="dibuang_at" ColumnName="dibuang_at" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="dbundles">
       <EntityTypeMapping TypeName="db_rotiModel.dbundle">
-        <MappingFragment StoreEntitySet="dbundle">
+        <MappingFragment StoreEntitySet="dbundles">
           <ScalarProperty Name="kode_dbundle" ColumnName="kode_dbundle" />
           <ScalarProperty Name="kode_bundle" ColumnName="kode_bundle" />
           <ScalarProperty Name="kode_roti" ColumnName="kode_roti" />
           <ScalarProperty Name="harga_roti" ColumnName="harga_roti" />
+          <ScalarProperty Name="qty" ColumnName="qty" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="diskons">
       <EntityTypeMapping TypeName="db_rotiModel.diskon">
-        <MappingFragment StoreEntitySet="diskon">
+        <MappingFragment StoreEntitySet="diskons">
           <ScalarProperty Name="kode_diskon" ColumnName="kode_diskon" />
           <ScalarProperty Name="tanggal_mulai" ColumnName="tanggal_mulai" />
           <ScalarProperty Name="tanggal_selesai" ColumnName="tanggal_selesai" />
@@ -40,10 +57,11 @@
     </EntitySetMapping>
     <EntitySetMapping Name="hbundles">
       <EntityTypeMapping TypeName="db_rotiModel.hbundle">
-        <MappingFragment StoreEntitySet="hbundle">
+        <MappingFragment StoreEntitySet="hbundles">
           <ScalarProperty Name="kode_bundle" ColumnName="kode_bundle" />
           <ScalarProperty Name="tanggal_mulai" ColumnName="tanggal_mulai" />
           <ScalarProperty Name="tanggal_selesai" ColumnName="tanggal_selesai" />
+          <ScalarProperty Name="keterangan" ColumnName="keterangan" />
           <ScalarProperty Name="harga_before" ColumnName="harga_before" />
           <ScalarProperty Name="potongan" ColumnName="potongan" />
           <ScalarProperty Name="harga_after" ColumnName="harga_after" />
@@ -73,7 +91,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="rotis">
       <EntityTypeMapping TypeName="db_rotiModel.roti">
-        <MappingFragment StoreEntitySet="roti">
+        <MappingFragment StoreEntitySet="rotis">
           <ScalarProperty Name="kode_roti" ColumnName="kode_roti" />
           <ScalarProperty Name="kode_jenis" ColumnName="kode_jenis" />
           <ScalarProperty Name="created_at" ColumnName="created_at" />

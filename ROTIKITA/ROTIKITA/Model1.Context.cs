@@ -25,6 +25,7 @@ namespace ROTIKITA
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<buang> buangs { get; set; }
         public virtual DbSet<dbundle> dbundles { get; set; }
         public virtual DbSet<diskon> diskons { get; set; }
         public virtual DbSet<dtran> dtrans { get; set; }

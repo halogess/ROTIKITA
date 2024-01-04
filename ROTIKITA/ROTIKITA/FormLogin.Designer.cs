@@ -42,7 +42,7 @@
             this.label1.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(91, 138);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(69, 17);
+            this.label1.Size = new System.Drawing.Size(93, 23);
             this.label1.TabIndex = 0;
             this.label1.Text = "User ID : ";
             // 
@@ -52,7 +52,7 @@
             this.label2.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(77, 195);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(77, 17);
+            this.label2.Size = new System.Drawing.Size(107, 23);
             this.label2.TabIndex = 1;
             this.label2.Text = "Password : ";
             // 
@@ -60,14 +60,15 @@
             // 
             this.TBUserID.Location = new System.Drawing.Point(202, 138);
             this.TBUserID.Name = "TBUserID";
-            this.TBUserID.Size = new System.Drawing.Size(219, 20);
+            this.TBUserID.Size = new System.Drawing.Size(219, 26);
             this.TBUserID.TabIndex = 2;
             // 
             // TBPassword
             // 
             this.TBPassword.Location = new System.Drawing.Point(202, 195);
             this.TBPassword.Name = "TBPassword";
-            this.TBPassword.Size = new System.Drawing.Size(219, 20);
+            this.TBPassword.PasswordChar = '*';
+            this.TBPassword.Size = new System.Drawing.Size(219, 26);
             this.TBPassword.TabIndex = 3;
             // 
             // label3
@@ -76,7 +77,7 @@
             this.label3.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(185, 43);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(67, 25);
+            this.label3.Size = new System.Drawing.Size(95, 36);
             this.label3.TabIndex = 4;
             this.label3.Text = "Login";
             // 
