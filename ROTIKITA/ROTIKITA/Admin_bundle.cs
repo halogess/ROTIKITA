@@ -165,5 +165,24 @@ namespace ROTIKITA
                 Close();
             }
         }
+
+        private void total_item_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgv_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+        }
+
+        private void keterangan_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_back_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

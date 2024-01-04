@@ -19,7 +19,7 @@ namespace ROTIKITA
 
         private void Admin_menu_Load(object sender, EventArgs e)
         {
-
+           
         }
 
         private void btn_daftar_Click(object sender, EventArgs e)
