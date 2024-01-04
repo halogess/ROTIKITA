@@ -38,7 +38,7 @@ namespace ROTIKITA
 
         private void addRotiButton_Click(object sender, EventArgs e)
         {
-            string kodeJenis = TBJenisRoti.Text;
+            string kodeJenis = labelJenisRotiValue.Text;
             int quantity = 0;
             try
             {
@@ -62,7 +62,7 @@ namespace ROTIKITA
                 DataGridViewRow row = this.jenisRotiGriwView.Rows[e.RowIndex];
                 string kodeJenis = row.Cells["JenisCode"].Value.ToString();
                 RotiHandler.currentKodeJenisRoti = kodeJenis;
-                TBJenisRoti.Text = kodeJenis;
+                labelJenisRotiValue.Text = kodeJenis;
                 loadListJenisRoti();
                 AddMode();
             }
@@ -77,8 +77,8 @@ namespace ROTIKITA
         {
             if (e.RowIndex >= 0)
             {
-                TBJenisRoti.Text = listRotiGridView.Rows[e.RowIndex].Cells["JenisCode"].Value.ToString();
-                TBKodeRoti.Text = listRotiGridView.Rows[e.RowIndex].Cells["KodeRoti"].Value.ToString();
+                labelJenisRotiValue.Text = listRotiGridView.Rows[e.RowIndex].Cells["JenisCode"].Value.ToString();
+                labelKodeRotiValue.Text = listRotiGridView.Rows[e.RowIndex].Cells["KodeRoti"].Value.ToString();
                 qtyNumericUpDown.Value = int.Parse(listRotiGridView.Rows[e.RowIndex].Cells["Quantity"].Value.ToString());
                 EditMode();
             }
@@ -96,15 +96,15 @@ namespace ROTIKITA
         }
         private void clear()
         {
-            TBJenisRoti.Text = "";
-            TBKodeRoti.Text = "";
+            labelJenisRotiValue.Text = "";
+            labelKodeRotiValue.Text = "";
             qtyNumericUpDown.Value = 0;
             AddMode();
         }
 
         private void editRotiButton_Click(object sender, EventArgs e)
         {
-            string kodeRoti = TBKodeRoti.Text;
+            string kodeRoti = labelKodeRotiValue.Text;
             int quantity = 0;
             try
             {
@@ -115,7 +115,7 @@ namespace ROTIKITA
                 MessageBox.Show("Quantity harus angka");
                 return;
             }
-            RotiHandler.EditRoti(TBKodeRoti.Text, quantity);
+            RotiHandler.EditRoti(labelKodeRotiValue.Text, quantity);
             clear();
             loadListRoti();
         }

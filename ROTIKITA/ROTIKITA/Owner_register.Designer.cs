@@ -94,6 +94,7 @@
             // 
             this.TBPassPegawai.Location = new System.Drawing.Point(135, 192);
             this.TBPassPegawai.Name = "TBPassPegawai";
+            this.TBPassPegawai.PasswordChar = '*';
             this.TBPassPegawai.Size = new System.Drawing.Size(238, 26);
             this.TBPassPegawai.TabIndex = 5;
             // 
