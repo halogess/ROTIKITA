@@ -11,7 +11,7 @@ namespace ROTIKITA
 {
     using System;
     using System.Collections.Generic;
-    
+
     public partial class diskon
     {
         public string kode_diskon { get; set; }
@@ -23,7 +23,7 @@ namespace ROTIKITA
         public string nama { get; set; }
         public string keterangan { get; set; }
         public string kode_roti { get; set; }
-    
+
         public virtual roti roti { get; set; }
     }
 }

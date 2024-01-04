@@ -30,9 +30,9 @@ namespace ROTIKITA
 
         private void FormDiskon_Load(object sender, EventArgs e)
         {
-
             load_DgvRoti();
             load_DgvDiskon();
+            load_dgvBundle();
 
         }
 
@@ -44,9 +44,15 @@ namespace ROTIKITA
                            where d.tanggal_selesai > DateTime.Now
                            select d.kode_roti).ToList();
 
+            var rbundle = (from b in db.dbundles
+                           join h in db.hbundles on b.kode_bundle equals h.kode_bundle
+                           where h.tanggal_selesai > DateTime.Now
+                           select b.kode_roti
+                           ).ToList();
+
             dgv_roti.DataSource = (from p in db.rotis
                                    join j in db.jenis_roti on p.kode_jenis equals j.kode_jenis
-                                   where !rdiskon.Contains(p.kode_roti)
+                                   where !rdiskon.Contains(p.kode_roti) && !rbundle.Contains(p.kode_roti)
                                    select new
                                    {
                                        Kode_Produksi = p.kode_roti,
@@ -141,39 +147,39 @@ namespace ROTIKITA
 
         }
 
+
         private void dgv_diskon_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             groupBox2.Enabled = true;
             row = dgv_diskon.Rows[e.RowIndex];
 
             string kode = row.Cells[0].Value.ToString();
+
             selectedDiskon = db.diskons.Where(x => x.kode_diskon == kode).FirstOrDefault();
-
-            diskon_nama.Text = row.Cells[4].Value.ToString();
-
-            string p = String.Empty;
-            for (int i = 0; i < row.Cells[1].Value.ToString().Length; i++)
-            {
-                if (int.TryParse(row.Cells[1].Value.ToString()[i].ToString(), out _))
-                {
-                    p += row.Cells[1].Value.ToString()[i].ToString();
-                }
-                else
-                {
-                    break;
-                }
-            }
-            diskon_num.Value = Convert.ToInt16(p);
 
             if (selectedDiskon.nama.Contains("%"))
             {
+                diskon_num.Maximum = 100;
+                string p = string.Empty;
+                for (int i = 0; i < selectedDiskon.nama.Length; i++)
+                {
+                    if (int.TryParse(selectedDiskon.nama[i].ToString(), out _))
+                    {
+                        MessageBox.Show(selectedDiskon.nama[i].ToString());
+                        p += selectedDiskon.nama[i].ToString();
+                    }
+                }
+                diskon_num.Value = Convert.ToInt32(p);
                 diskon_cb.SelectedIndex = 0;
             }
             else
             {
+                diskon_num.Maximum = (int)selectedDiskon.harga_before.Value;
+                diskon_num.Value = (int)selectedDiskon.potongan.Value;
                 diskon_cb.SelectedIndex = 1;
             }
 
+            diskon_nama.Text = row.Cells[4].Value.ToString();
             diskon_keterangan.Text = selectedDiskon.keterangan.ToString();
         }
 
@@ -222,7 +228,6 @@ namespace ROTIKITA
             diskon_num.Value = 0;
             diskon_date.Value = DateTime.Now.Date;
             diskon_keterangan.Text = string.Empty;
-
         }
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -265,8 +270,63 @@ namespace ROTIKITA
         {
             resetEditDiskon();
         }
+
+        private void load_dgvBundle()
+        {
+            dgv_bundle.DataSource = (from h in db.hbundles
+                                     select new
+                                     {
+                                         Kode = h.kode_bundle,
+                                         Keterangan = h.keterangan,
+                                         Harga_Sebelum = h.harga_before,
+                                         Harga_Bundle = h.harga_after,
+                                         Mulai = h.tanggal_mulai,
+                                         Selesai = h.tanggal_selesai
+
+                                     }).ToList();
+
+            dgv_bundle.AutoResizeColumn(0, DataGridViewAutoSizeColumnMode.AllCells);
+            dgv_bundle.AutoResizeColumn(2, DataGridViewAutoSizeColumnMode.AllCells);
+            dgv_bundle.AutoResizeColumn(3, DataGridViewAutoSizeColumnMode.AllCells);
+
+            dgv_bundle.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dgv_bundle.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dgv_bundle.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dgv_bundle.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+        }
+
+        private void btn_bundle_Click(object sender, EventArgs e)
+        {
+            List<string> selected = new List<string>();
+            foreach (DataGridViewRow row in dgv_roti.Rows)
+            {
+                if (Convert.ToBoolean(row.Cells[0].Value))
+                {
+                    selected.Add(row.Cells[1].Value.ToString());
+                }
+            }
+
+            if (selected.Count > 0)
+            {
+                Admin_bundle d = new Admin_bundle(selected);
+                Hide();
+                d.ShowDialog();
+                Show();
+                load_dgvBundle();
+                load_DgvRoti();
+            }
+            else
+            {
+                MessageBox.Show("Tidak ada roti yang dipilih");
+            }
+        }
+
+        private void dgv_diskon_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
 
-    
+
 
