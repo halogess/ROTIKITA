@@ -214,8 +214,17 @@ namespace ROTIKITA
                 int subtotal = int.Parse(item.Cells[5].Value.ToString());
                 cartList.Add(new BuyRotiItemVo(kode, nama, harga, quantity, subtotal));
             }
+            foreach (DataGridViewRow item in diskonDataGridView.Rows)
+            {
+                string kode = item.Cells[0].Value.ToString();
+                string nama = item.Cells[1].Value.ToString();
+                int harga = int.Parse(item.Cells[2].Value.ToString());
+                int quantity = int.Parse(item.Cells[3].Value.ToString());
+                int subtotal = int.Parse(item.Cells[4].Value.ToString());
+                diskonList.Add(new DiskonItemVo(kode, nama, harga, quantity, subtotal));
+            }
             int totalHarga = int.Parse(totalHargaLabel.Text);
-            RotiHandler.BuyRoti(cartList, totalHarga);
+            RotiHandler.BuyRoti(cartList, totalHarga,diskonList);
             keranjangDataGridView.Rows.Clear();
             diskonDataGridView.Rows.Clear();
             LoadListRoti();

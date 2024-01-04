@@ -308,7 +308,7 @@ namespace ROTIKITA.Controller
         {
             return "D" + idCount.ToString("D9");
         }
-        public static void BuyRoti(List<BuyRotiItemVo> cartList, int total)
+        public static void BuyRoti(List<BuyRotiItemVo> cartList, int total, List<DiskonItemVo> diskonList)
         {
             var transaction = db.Database.BeginTransaction();
             try
@@ -334,7 +334,15 @@ namespace ROTIKITA.Controller
                     dtran.kode_roti = item.KodeRoti;
                     dtran.qty = item.Qty;
                     dtran.harga = item.Harga;
-                    dtran.subtotal = item.Subtotal;
+                    int subtotal = item.Subtotal;
+                    foreach (DiskonItemVo diskon in diskonList)
+                    {
+                        if (diskon.kode_roti.Equals(item.KodeRoti))
+                        {
+                            subtotal -= diskon.totalDiskon;
+                        }
+                    }
+                    dtran.subtotal = subtotal;
                     db.dtrans.Add(dtran);
                 }
                 db.SaveChanges();
