@@ -198,7 +198,7 @@ namespace ROTIKITA
                 //diskonList.Add(new DiskonItemVo(kode, namaRoti, potonganPerQty, quantity, totalDiskon));
             }
             jumlahItemLabel.Text = jumlahItem.ToString();
-            totalHargaLabel.Text = (totalHarga-totalDiskon).ToString();
+            totalHargaLabel.Text = (totalHarga - totalDiskon).ToString();
         }
 
         private void butButton_Click(object sender, EventArgs e)

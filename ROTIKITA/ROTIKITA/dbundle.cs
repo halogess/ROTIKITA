@@ -11,14 +11,15 @@ namespace ROTIKITA
 {
     using System;
     using System.Collections.Generic;
-    
+
     public partial class dbundle
     {
         public string kode_dbundle { get; set; }
         public string kode_bundle { get; set; }
         public string kode_roti { get; set; }
         public Nullable<int> harga_roti { get; set; }
-    
+        public Nullable<int> qty { get; set; }
+
         public virtual hbundle hbundle { get; set; }
         public virtual roti roti { get; set; }
     }

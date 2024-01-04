@@ -11,16 +11,24 @@ namespace ROTIKITA
 {
     using System;
     using System.Collections.Generic;
-    
+
     public partial class hbundle
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public hbundle()
+        {
+            this.dbundles = new HashSet<dbundle>();
+        }
+
         public string kode_bundle { get; set; }
         public Nullable<System.DateTime> tanggal_mulai { get; set; }
         public Nullable<System.DateTime> tanggal_selesai { get; set; }
+        public string keterangan { get; set; }
         public Nullable<int> harga_before { get; set; }
         public Nullable<int> potongan { get; set; }
         public Nullable<int> harga_after { get; set; }
-    
-        public virtual dbundle dbundle { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<dbundle> dbundles { get; set; }
     }
 }

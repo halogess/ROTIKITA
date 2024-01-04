@@ -2,12 +2,13 @@
 <Schema Namespace="db_rotiModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityType Name="dbundle">
     <Key>
-      <PropertyRef Name="kode_bundle" />
+      <PropertyRef Name="kode_dbundle" />
     </Key>
-    <Property Name="kode_dbundle" Type="varchar" MaxLength="10" />
-    <Property Name="kode_bundle" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="kode_dbundle" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="kode_bundle" Type="varchar" MaxLength="10" />
     <Property Name="kode_roti" Type="varchar" MaxLength="10" />
     <Property Name="harga_roti" Type="int" />
+    <Property Name="qty" Type="int" />
   </EntityType>
   <EntityType Name="diskon">
     <Key>
@@ -19,7 +20,7 @@
     <Property Name="harga_before" Type="int" />
     <Property Name="potongan" Type="int" />
     <Property Name="harga_after" Type="int" />
-    <Property Name="nama" Type="varchar" MaxLength="10" />
+    <Property Name="nama" Type="varchar" MaxLength="100" />
     <Property Name="keterangan" Type="varchar" MaxLength="50" />
     <Property Name="kode_roti" Type="varchar" MaxLength="10" />
   </EntityType>
@@ -41,6 +42,7 @@
     <Property Name="kode_bundle" Type="varchar" MaxLength="10" Nullable="false" />
     <Property Name="tanggal_mulai" Type="datetime" />
     <Property Name="tanggal_selesai" Type="datetime" />
+    <Property Name="keterangan" Type="varchar" MaxLength="200" />
     <Property Name="harga_before" Type="int" />
     <Property Name="potongan" Type="int" />
     <Property Name="harga_after" Type="int" />
@@ -84,8 +86,8 @@
     <Property Name="role" Type="varchar" MaxLength="10" />
   </EntityType>
   <Association Name="FKBUNDLE_BUNDLE">
-    <End Role="hbundle" Type="Self.hbundle" Multiplicity="1" />
-    <End Role="dbundle" Type="Self.dbundle" Multiplicity="0..1" />
+    <End Role="hbundle" Type="Self.hbundle" Multiplicity="0..1" />
+    <End Role="dbundle" Type="Self.dbundle" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="hbundle">
         <PropertyRef Name="kode_bundle" />
