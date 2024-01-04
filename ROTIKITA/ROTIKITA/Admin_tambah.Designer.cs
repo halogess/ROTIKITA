@@ -46,11 +46,11 @@
             this.listRotiGridView = new System.Windows.Forms.DataGridView();
             this.labelRotiAda = new System.Windows.Forms.Label();
             this.editRotiButton = new System.Windows.Forms.Button();
-            this.TBJenisRoti = new System.Windows.Forms.TextBox();
             this.jenisRotiLabel = new System.Windows.Forms.Label();
-            this.TBKodeRoti = new System.Windows.Forms.TextBox();
             this.labelKodeRoti = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.labelJenisRotiValue = new System.Windows.Forms.Label();
+            this.labelKodeRotiValue = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.jenisRotiGriwView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.qtyNumericUpDown)).BeginInit();
@@ -73,6 +73,7 @@
             this.jenisRotiGriwView.RowHeadersVisible = false;
             this.jenisRotiGriwView.RowHeadersWidth = 62;
             this.jenisRotiGriwView.RowTemplate.Height = 28;
+            this.jenisRotiGriwView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.jenisRotiGriwView.Size = new System.Drawing.Size(767, 218);
             this.jenisRotiGriwView.TabIndex = 0;
             this.jenisRotiGriwView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.jenisRotiGriwView_CellClick);
@@ -223,6 +224,7 @@
             this.listRotiGridView.RowHeadersVisible = false;
             this.listRotiGridView.RowHeadersWidth = 62;
             this.listRotiGridView.RowTemplate.Height = 28;
+            this.listRotiGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.listRotiGridView.Size = new System.Drawing.Size(712, 404);
             this.listRotiGridView.TabIndex = 18;
             this.listRotiGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.listRotiGridView_CellClick);
@@ -250,15 +252,6 @@
             this.editRotiButton.UseVisualStyleBackColor = false;
             this.editRotiButton.Click += new System.EventHandler(this.editRotiButton_Click);
             // 
-            // TBJenisRoti
-            // 
-            this.TBJenisRoti.Enabled = false;
-            this.TBJenisRoti.Location = new System.Drawing.Point(139, 297);
-            this.TBJenisRoti.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.TBJenisRoti.Name = "TBJenisRoti";
-            this.TBJenisRoti.Size = new System.Drawing.Size(216, 26);
-            this.TBJenisRoti.TabIndex = 22;
-            // 
             // jenisRotiLabel
             // 
             this.jenisRotiLabel.AutoSize = true;
@@ -268,14 +261,6 @@
             this.jenisRotiLabel.Size = new System.Drawing.Size(106, 23);
             this.jenisRotiLabel.TabIndex = 21;
             this.jenisRotiLabel.Text = "Jenis Roti :";
-            // 
-            // TBKodeRoti
-            // 
-            this.TBKodeRoti.Location = new System.Drawing.Point(139, 345);
-            this.TBKodeRoti.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.TBKodeRoti.Name = "TBKodeRoti";
-            this.TBKodeRoti.Size = new System.Drawing.Size(216, 26);
-            this.TBKodeRoti.TabIndex = 24;
             // 
             // labelKodeRoti
             // 
@@ -300,16 +285,32 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // labelJenisRotiValue
+            // 
+            this.labelJenisRotiValue.AutoSize = true;
+            this.labelJenisRotiValue.Location = new System.Drawing.Point(149, 296);
+            this.labelJenisRotiValue.Name = "labelJenisRotiValue";
+            this.labelJenisRotiValue.Size = new System.Drawing.Size(0, 20);
+            this.labelJenisRotiValue.TabIndex = 26;
+            // 
+            // labelKodeRotiValue
+            // 
+            this.labelKodeRotiValue.AutoSize = true;
+            this.labelKodeRotiValue.Location = new System.Drawing.Point(149, 348);
+            this.labelKodeRotiValue.Name = "labelKodeRotiValue";
+            this.labelKodeRotiValue.Size = new System.Drawing.Size(0, 20);
+            this.labelKodeRotiValue.TabIndex = 27;
+            // 
             // Admin_tambah
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(189)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(1582, 459);
+            this.Controls.Add(this.labelKodeRotiValue);
+            this.Controls.Add(this.labelJenisRotiValue);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.TBKodeRoti);
             this.Controls.Add(this.labelKodeRoti);
-            this.Controls.Add(this.TBJenisRoti);
             this.Controls.Add(this.jenisRotiLabel);
             this.Controls.Add(this.editRotiButton);
             this.Controls.Add(this.labelRotiAda);
@@ -354,10 +355,10 @@
         private System.Windows.Forms.DataGridView listRotiGridView;
         private System.Windows.Forms.Label labelRotiAda;
         private System.Windows.Forms.Button editRotiButton;
-        private System.Windows.Forms.TextBox TBJenisRoti;
         private System.Windows.Forms.Label jenisRotiLabel;
-        private System.Windows.Forms.TextBox TBKodeRoti;
         private System.Windows.Forms.Label labelKodeRoti;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label labelJenisRotiValue;
+        private System.Windows.Forms.Label labelKodeRotiValue;
     }
 }

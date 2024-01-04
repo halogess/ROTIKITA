@@ -17,6 +17,7 @@ namespace ROTIKITA
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public jenis_roti()
         {
+            this.buangs = new HashSet<buang>();
             this.rotis = new HashSet<roti>();
         }
     
@@ -26,6 +27,8 @@ namespace ROTIKITA
         public Nullable<int> status { get; set; }
         public Nullable<int> harga { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<buang> buangs { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<roti> rotis { get; set; }
     }

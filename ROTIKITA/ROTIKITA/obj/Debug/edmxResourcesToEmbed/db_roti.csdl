@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="db_rotiModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
   <EntityContainer Name="db_rotiEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="buangs" EntityType="db_rotiModel.buang" />
     <EntitySet Name="dbundles" EntityType="db_rotiModel.dbundle" />
     <EntitySet Name="diskons" EntityType="db_rotiModel.diskon" />
     <EntitySet Name="dtrans" EntityType="db_rotiModel.dtran" />
@@ -9,35 +10,60 @@
     <EntitySet Name="jenis_roti" EntityType="db_rotiModel.jenis_roti" />
     <EntitySet Name="rotis" EntityType="db_rotiModel.roti" />
     <EntitySet Name="users" EntityType="db_rotiModel.user" />
-    <AssociationSet Name="FKBUNDLE_BUNDLE" Association="db_rotiModel.FKBUNDLE_BUNDLE">
+    <AssociationSet Name="FK_FKBUANG_JENIS_ROTI" Association="db_rotiModel.FK_FKBUANG_JENIS_ROTI">
+      <End Role="jenis_roti" EntitySet="jenis_roti" />
+      <End Role="buang" EntitySet="buangs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FKBUANG_ROTI" Association="db_rotiModel.FK_FKBUANG_ROTI">
+      <End Role="roti" EntitySet="rotis" />
+      <End Role="buang" EntitySet="buangs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FKBUNDLE_BUNDLE" Association="db_rotiModel.FK_FKBUNDLE_BUNDLE">
       <End Role="hbundle" EntitySet="hbundles" />
       <End Role="dbundle" EntitySet="dbundles" />
     </AssociationSet>
-    <AssociationSet Name="FKPRODUCT_ROTI" Association="db_rotiModel.FKPRODUCT_ROTI">
+    <AssociationSet Name="FK_FKPRODUCT_ROTI" Association="db_rotiModel.FK_FKPRODUCT_ROTI">
       <End Role="roti" EntitySet="rotis" />
       <End Role="dbundle" EntitySet="dbundles" />
     </AssociationSet>
-    <AssociationSet Name="FKDISKON_ROTI" Association="db_rotiModel.FKDISKON_ROTI">
+    <AssociationSet Name="FK_FKDISKON_ROTI" Association="db_rotiModel.FK_FKDISKON_ROTI">
       <End Role="roti" EntitySet="rotis" />
       <End Role="diskon" EntitySet="diskons" />
     </AssociationSet>
-    <AssociationSet Name="FKHTRANS_ROTI" Association="db_rotiModel.FKHTRANS_ROTI">
+    <AssociationSet Name="FK_FKHTRANS_ROTI" Association="db_rotiModel.FK_FKHTRANS_ROTI">
       <End Role="htran" EntitySet="htrans" />
       <End Role="dtran" EntitySet="dtrans" />
     </AssociationSet>
-    <AssociationSet Name="FKKODE_ROTI_HTRANS" Association="db_rotiModel.FKKODE_ROTI_HTRANS">
+    <AssociationSet Name="FK_FKKODE_ROTI_HTRANS" Association="db_rotiModel.FK_FKKODE_ROTI_HTRANS">
       <End Role="roti" EntitySet="rotis" />
       <End Role="dtran" EntitySet="dtrans" />
     </AssociationSet>
-    <AssociationSet Name="FKUSER_ROTI" Association="db_rotiModel.FKUSER_ROTI">
+    <AssociationSet Name="FK_FKUSER_ROTI" Association="db_rotiModel.FK_FKUSER_ROTI">
       <End Role="user" EntitySet="users" />
       <End Role="htran" EntitySet="htrans" />
     </AssociationSet>
-    <AssociationSet Name="FKJENIS_ROTI" Association="db_rotiModel.FKJENIS_ROTI">
+    <AssociationSet Name="FK_FKJENIS_ROTI" Association="db_rotiModel.FK_FKJENIS_ROTI">
       <End Role="jenis_roti" EntitySet="jenis_roti" />
       <End Role="roti" EntitySet="rotis" />
     </AssociationSet>
   </EntityContainer>
+  <EntityType Name="buang">
+    <Key>
+      <PropertyRef Name="kode_buang" />
+    </Key>
+    <Property Name="kode_buang" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="kode_roti" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="kode_jenis" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="nama_roti" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="harga" Type="Int32" />
+    <Property Name="qty" Type="Int32" />
+    <Property Name="subtotal" Type="Int32" />
+    <Property Name="created_at" Type="DateTime" Precision="3" />
+    <Property Name="expired_at" Type="DateTime" Precision="3" />
+    <Property Name="dibuang_at" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="jenis_roti" Relationship="db_rotiModel.FK_FKBUANG_JENIS_ROTI" FromRole="buang" ToRole="jenis_roti" />
+    <NavigationProperty Name="roti" Relationship="db_rotiModel.FK_FKBUANG_ROTI" FromRole="buang" ToRole="roti" />
+  </EntityType>
   <EntityType Name="dbundle">
     <Key>
       <PropertyRef Name="kode_dbundle" />
@@ -47,8 +73,8 @@
     <Property Name="kode_roti" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
     <Property Name="harga_roti" Type="Int32" />
     <Property Name="qty" Type="Int32" />
-    <NavigationProperty Name="hbundle" Relationship="db_rotiModel.FKBUNDLE_BUNDLE" FromRole="dbundle" ToRole="hbundle" />
-    <NavigationProperty Name="roti" Relationship="db_rotiModel.FKPRODUCT_ROTI" FromRole="dbundle" ToRole="roti" />
+    <NavigationProperty Name="hbundle" Relationship="db_rotiModel.FK_FKBUNDLE_BUNDLE" FromRole="dbundle" ToRole="hbundle" />
+    <NavigationProperty Name="roti" Relationship="db_rotiModel.FK_FKPRODUCT_ROTI" FromRole="dbundle" ToRole="roti" />
   </EntityType>
   <EntityType Name="diskon">
     <Key>
@@ -63,7 +89,7 @@
     <Property Name="nama" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
     <Property Name="keterangan" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="kode_roti" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="roti" Relationship="db_rotiModel.FKDISKON_ROTI" FromRole="diskon" ToRole="roti" />
+    <NavigationProperty Name="roti" Relationship="db_rotiModel.FK_FKDISKON_ROTI" FromRole="diskon" ToRole="roti" />
   </EntityType>
   <EntityType Name="dtran">
     <Key>
@@ -75,8 +101,8 @@
     <Property Name="qty" Type="Int32" />
     <Property Name="harga" Type="Int32" />
     <Property Name="subtotal" Type="Int32" />
-    <NavigationProperty Name="htran" Relationship="db_rotiModel.FKHTRANS_ROTI" FromRole="dtran" ToRole="htran" />
-    <NavigationProperty Name="roti" Relationship="db_rotiModel.FKKODE_ROTI_HTRANS" FromRole="dtran" ToRole="roti" />
+    <NavigationProperty Name="htran" Relationship="db_rotiModel.FK_FKHTRANS_ROTI" FromRole="dtran" ToRole="htran" />
+    <NavigationProperty Name="roti" Relationship="db_rotiModel.FK_FKKODE_ROTI_HTRANS" FromRole="dtran" ToRole="roti" />
   </EntityType>
   <EntityType Name="hbundle">
     <Key>
@@ -89,7 +115,7 @@
     <Property Name="harga_before" Type="Int32" />
     <Property Name="potongan" Type="Int32" />
     <Property Name="harga_after" Type="Int32" />
-    <NavigationProperty Name="dbundles" Relationship="db_rotiModel.FKBUNDLE_BUNDLE" FromRole="hbundle" ToRole="dbundle" />
+    <NavigationProperty Name="dbundles" Relationship="db_rotiModel.FK_FKBUNDLE_BUNDLE" FromRole="hbundle" ToRole="dbundle" />
   </EntityType>
   <EntityType Name="htran">
     <Key>
@@ -98,9 +124,9 @@
     <Property Name="htrans_id" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
     <Property Name="user_id" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
     <Property Name="subtotal" Type="Int32" />
-    <Property Name="tanggal" Type="DateTime" Precision="0" />
-    <NavigationProperty Name="dtrans" Relationship="db_rotiModel.FKHTRANS_ROTI" FromRole="htran" ToRole="dtran" />
-    <NavigationProperty Name="user" Relationship="db_rotiModel.FKUSER_ROTI" FromRole="htran" ToRole="user" />
+    <Property Name="tanggal" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="dtrans" Relationship="db_rotiModel.FK_FKHTRANS_ROTI" FromRole="htran" ToRole="dtran" />
+    <NavigationProperty Name="user" Relationship="db_rotiModel.FK_FKUSER_ROTI" FromRole="htran" ToRole="user" />
   </EntityType>
   <EntityType Name="jenis_roti">
     <Key>
@@ -111,7 +137,8 @@
     <Property Name="exp" Type="Int32" />
     <Property Name="status" Type="Int32" />
     <Property Name="harga" Type="Int32" />
-    <NavigationProperty Name="rotis" Relationship="db_rotiModel.FKJENIS_ROTI" FromRole="jenis_roti" ToRole="roti" />
+    <NavigationProperty Name="buangs" Relationship="db_rotiModel.FK_FKBUANG_JENIS_ROTI" FromRole="jenis_roti" ToRole="buang" />
+    <NavigationProperty Name="rotis" Relationship="db_rotiModel.FK_FKJENIS_ROTI" FromRole="jenis_roti" ToRole="roti" />
   </EntityType>
   <EntityType Name="roti">
     <Key>
@@ -122,10 +149,11 @@
     <Property Name="created_at" Type="DateTime" Precision="3" />
     <Property Name="expired_at" Type="DateTime" Precision="3" />
     <Property Name="qty" Type="Int32" />
-    <NavigationProperty Name="dbundles" Relationship="db_rotiModel.FKPRODUCT_ROTI" FromRole="roti" ToRole="dbundle" />
-    <NavigationProperty Name="diskons" Relationship="db_rotiModel.FKDISKON_ROTI" FromRole="roti" ToRole="diskon" />
-    <NavigationProperty Name="dtrans" Relationship="db_rotiModel.FKKODE_ROTI_HTRANS" FromRole="roti" ToRole="dtran" />
-    <NavigationProperty Name="jenis_roti" Relationship="db_rotiModel.FKJENIS_ROTI" FromRole="roti" ToRole="jenis_roti" />
+    <NavigationProperty Name="buangs" Relationship="db_rotiModel.FK_FKBUANG_ROTI" FromRole="roti" ToRole="buang" />
+    <NavigationProperty Name="dbundles" Relationship="db_rotiModel.FK_FKPRODUCT_ROTI" FromRole="roti" ToRole="dbundle" />
+    <NavigationProperty Name="diskons" Relationship="db_rotiModel.FK_FKDISKON_ROTI" FromRole="roti" ToRole="diskon" />
+    <NavigationProperty Name="dtrans" Relationship="db_rotiModel.FK_FKKODE_ROTI_HTRANS" FromRole="roti" ToRole="dtran" />
+    <NavigationProperty Name="jenis_roti" Relationship="db_rotiModel.FK_FKJENIS_ROTI" FromRole="roti" ToRole="jenis_roti" />
   </EntityType>
   <EntityType Name="user">
     <Key>
@@ -135,9 +163,33 @@
     <Property Name="nama" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
     <Property Name="password" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
     <Property Name="role" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="htrans" Relationship="db_rotiModel.FKUSER_ROTI" FromRole="user" ToRole="htran" />
+    <NavigationProperty Name="htrans" Relationship="db_rotiModel.FK_FKUSER_ROTI" FromRole="user" ToRole="htran" />
   </EntityType>
-  <Association Name="FKBUNDLE_BUNDLE">
+  <Association Name="FK_FKBUANG_JENIS_ROTI">
+    <End Type="db_rotiModel.jenis_roti" Role="jenis_roti" Multiplicity="0..1" />
+    <End Type="db_rotiModel.buang" Role="buang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="jenis_roti">
+        <PropertyRef Name="kode_jenis" />
+      </Principal>
+      <Dependent Role="buang">
+        <PropertyRef Name="kode_jenis" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FKBUANG_ROTI">
+    <End Type="db_rotiModel.roti" Role="roti" Multiplicity="0..1" />
+    <End Type="db_rotiModel.buang" Role="buang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="roti">
+        <PropertyRef Name="kode_roti" />
+      </Principal>
+      <Dependent Role="buang">
+        <PropertyRef Name="kode_roti" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FKBUNDLE_BUNDLE">
     <End Type="db_rotiModel.hbundle" Role="hbundle" Multiplicity="0..1" />
     <End Type="db_rotiModel.dbundle" Role="dbundle" Multiplicity="*" />
     <ReferentialConstraint>
@@ -149,7 +201,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FKPRODUCT_ROTI">
+  <Association Name="FK_FKPRODUCT_ROTI">
     <End Type="db_rotiModel.roti" Role="roti" Multiplicity="0..1" />
     <End Type="db_rotiModel.dbundle" Role="dbundle" Multiplicity="*" />
     <ReferentialConstraint>
@@ -161,7 +213,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FKDISKON_ROTI">
+  <Association Name="FK_FKDISKON_ROTI">
     <End Type="db_rotiModel.roti" Role="roti" Multiplicity="0..1" />
     <End Type="db_rotiModel.diskon" Role="diskon" Multiplicity="*" />
     <ReferentialConstraint>
@@ -173,7 +225,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FKHTRANS_ROTI">
+  <Association Name="FK_FKHTRANS_ROTI">
     <End Type="db_rotiModel.htran" Role="htran" Multiplicity="0..1" />
     <End Type="db_rotiModel.dtran" Role="dtran" Multiplicity="*" />
     <ReferentialConstraint>
@@ -185,7 +237,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FKKODE_ROTI_HTRANS">
+  <Association Name="FK_FKKODE_ROTI_HTRANS">
     <End Type="db_rotiModel.roti" Role="roti" Multiplicity="0..1" />
     <End Type="db_rotiModel.dtran" Role="dtran" Multiplicity="*" />
     <ReferentialConstraint>
@@ -197,7 +249,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FKUSER_ROTI">
+  <Association Name="FK_FKUSER_ROTI">
     <End Type="db_rotiModel.user" Role="user" Multiplicity="0..1" />
     <End Type="db_rotiModel.htran" Role="htran" Multiplicity="*" />
     <ReferentialConstraint>
@@ -209,7 +261,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FKJENIS_ROTI">
+  <Association Name="FK_FKJENIS_ROTI">
     <End Type="db_rotiModel.jenis_roti" Role="jenis_roti" Multiplicity="0..1" />
     <End Type="db_rotiModel.roti" Role="roti" Multiplicity="*" />
     <ReferentialConstraint>

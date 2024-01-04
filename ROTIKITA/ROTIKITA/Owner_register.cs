@@ -44,6 +44,16 @@ namespace ROTIKITA
             }
             UserHandler.AddUser(namaPegawai, password, role);
             loadListUser();
+            resetInputs();
+
+        }
+
+        private void resetInputs()
+        {
+            TBNamaPegawai.Text = string.Empty;
+            TBPassPegawai.Text = string.Empty;
+            kasirRadioButton.Checked = false;
+            adminRadioButton.Checked = false;
         }
     }
 }

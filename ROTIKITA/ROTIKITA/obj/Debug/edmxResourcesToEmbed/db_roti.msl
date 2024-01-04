@@ -1,9 +1,25 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="db_rotiModelStoreContainer" CdmEntityContainer="db_rotiEntities">
+    <EntitySetMapping Name="buangs">
+      <EntityTypeMapping TypeName="db_rotiModel.buang">
+        <MappingFragment StoreEntitySet="buangs">
+          <ScalarProperty Name="dibuang_at" ColumnName="dibuang_at" />
+          <ScalarProperty Name="expired_at" ColumnName="expired_at" />
+          <ScalarProperty Name="created_at" ColumnName="created_at" />
+          <ScalarProperty Name="subtotal" ColumnName="subtotal" />
+          <ScalarProperty Name="qty" ColumnName="qty" />
+          <ScalarProperty Name="harga" ColumnName="harga" />
+          <ScalarProperty Name="nama_roti" ColumnName="nama_roti" />
+          <ScalarProperty Name="kode_jenis" ColumnName="kode_jenis" />
+          <ScalarProperty Name="kode_roti" ColumnName="kode_roti" />
+          <ScalarProperty Name="kode_buang" ColumnName="kode_buang" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="dbundles">
       <EntityTypeMapping TypeName="db_rotiModel.dbundle">
-        <MappingFragment StoreEntitySet="dbundle">
+        <MappingFragment StoreEntitySet="dbundles">
           <ScalarProperty Name="qty" ColumnName="qty" />
           <ScalarProperty Name="harga_roti" ColumnName="harga_roti" />
           <ScalarProperty Name="kode_roti" ColumnName="kode_roti" />
@@ -14,7 +30,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="diskons">
       <EntityTypeMapping TypeName="db_rotiModel.diskon">
-        <MappingFragment StoreEntitySet="diskon">
+        <MappingFragment StoreEntitySet="diskons">
           <ScalarProperty Name="kode_roti" ColumnName="kode_roti" />
           <ScalarProperty Name="keterangan" ColumnName="keterangan" />
           <ScalarProperty Name="nama" ColumnName="nama" />
@@ -41,7 +57,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="hbundles">
       <EntityTypeMapping TypeName="db_rotiModel.hbundle">
-        <MappingFragment StoreEntitySet="hbundle">
+        <MappingFragment StoreEntitySet="hbundles">
           <ScalarProperty Name="harga_after" ColumnName="harga_after" />
           <ScalarProperty Name="potongan" ColumnName="potongan" />
           <ScalarProperty Name="harga_before" ColumnName="harga_before" />
@@ -75,7 +91,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="rotis">
       <EntityTypeMapping TypeName="db_rotiModel.roti">
-        <MappingFragment StoreEntitySet="roti">
+        <MappingFragment StoreEntitySet="rotis">
           <ScalarProperty Name="qty" ColumnName="qty" />
           <ScalarProperty Name="expired_at" ColumnName="expired_at" />
           <ScalarProperty Name="created_at" ColumnName="created_at" />

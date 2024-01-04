@@ -17,6 +17,7 @@ namespace ROTIKITA
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public roti()
         {
+            this.buangs = new HashSet<buang>();
             this.dbundles = new HashSet<dbundle>();
             this.diskons = new HashSet<diskon>();
             this.dtrans = new HashSet<dtran>();
@@ -28,6 +29,8 @@ namespace ROTIKITA
         public Nullable<System.DateTime> expired_at { get; set; }
         public Nullable<int> qty { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<buang> buangs { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<dbundle> dbundles { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
