@@ -16,6 +16,7 @@ namespace ROTIKITA.Controller
         private static string KODE_JENIS_ROTI_PREFIX = "J_R";
         private static string KODE_ROTI_PREFIX = "ROTI";
         public static string EXPIRED_SUFFIX = "Hari";
+        public static string HEADER_HTRANS;
         public static void ResetState()
         {
             currentKodeJenisRoti = "";
@@ -347,6 +348,7 @@ namespace ROTIKITA.Controller
                 }
                 db.SaveChanges();
                 transaction.Commit();
+                HEADER_HTRANS = htID;
             }
             catch (Exception)
             {

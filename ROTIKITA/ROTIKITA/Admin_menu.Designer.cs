@@ -33,13 +33,11 @@
             this.btn_diskon = new System.Windows.Forms.Button();
             this.btn_history = new System.Windows.Forms.Button();
             this.btn_buang = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_daftar
             // 
-            this.btn_daftar.Location = new System.Drawing.Point(44, 101);
+            this.btn_daftar.Location = new System.Drawing.Point(12, 70);
             this.btn_daftar.Name = "btn_daftar";
             this.btn_daftar.Size = new System.Drawing.Size(133, 120);
             this.btn_daftar.TabIndex = 0;
@@ -49,7 +47,7 @@
             // 
             // btn_tambah
             // 
-            this.btn_tambah.Location = new System.Drawing.Point(222, 101);
+            this.btn_tambah.Location = new System.Drawing.Point(160, 70);
             this.btn_tambah.Name = "btn_tambah";
             this.btn_tambah.Size = new System.Drawing.Size(133, 120);
             this.btn_tambah.TabIndex = 1;
@@ -59,9 +57,9 @@
             // 
             // btn_diskon
             // 
-            this.btn_diskon.Location = new System.Drawing.Point(44, 288);
+            this.btn_diskon.Location = new System.Drawing.Point(438, 70);
             this.btn_diskon.Name = "btn_diskon";
-            this.btn_diskon.Size = new System.Drawing.Size(263, 120);
+            this.btn_diskon.Size = new System.Drawing.Size(133, 120);
             this.btn_diskon.TabIndex = 2;
             this.btn_diskon.Text = "Diskon";
             this.btn_diskon.UseVisualStyleBackColor = true;
@@ -69,9 +67,9 @@
             // 
             // btn_history
             // 
-            this.btn_history.Location = new System.Drawing.Point(364, 288);
+            this.btn_history.Location = new System.Drawing.Point(577, 70);
             this.btn_history.Name = "btn_history";
-            this.btn_history.Size = new System.Drawing.Size(264, 120);
+            this.btn_history.Size = new System.Drawing.Size(133, 120);
             this.btn_history.TabIndex = 3;
             this.btn_history.Text = "History";
             this.btn_history.UseVisualStyleBackColor = true;
@@ -79,7 +77,7 @@
             // 
             // btn_buang
             // 
-            this.btn_buang.Location = new System.Drawing.Point(400, 101);
+            this.btn_buang.Location = new System.Drawing.Point(299, 70);
             this.btn_buang.Name = "btn_buang";
             this.btn_buang.Size = new System.Drawing.Size(133, 120);
             this.btn_buang.TabIndex = 4;
@@ -87,20 +85,11 @@
             this.btn_buang.UseVisualStyleBackColor = true;
             this.btn_buang.Click += new System.EventHandler(this.btn_buang_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(77, 45);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 50);
-            this.pictureBox1.TabIndex = 5;
-            this.pictureBox1.TabStop = false;
-            // 
             // Admin_menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btn_buang);
             this.Controls.Add(this.btn_history);
             this.Controls.Add(this.btn_diskon);
@@ -109,7 +98,6 @@
             this.Name = "Admin_menu";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Admin_menu_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -121,6 +109,5 @@
         private System.Windows.Forms.Button btn_diskon;
         private System.Windows.Forms.Button btn_history;
         private System.Windows.Forms.Button btn_buang;
-        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
