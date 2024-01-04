@@ -44,12 +44,15 @@ namespace ROTIKITA.Controller
 
         public static int CekDiskon(string kode_roti)
         {
-            diskon diskon = db.diskons.Where(d=>d.kode_diskon == kode_roti && d.tanggal_mulai >= DateTime.Now && d.tanggal_selesai <= DateTime.Now).FirstOrDefault();
-            if(diskon == null)
+            diskon diskount= db.diskons
+    .Where(d => d.kode_roti == kode_roti &&
+                d.tanggal_mulai <= DateTime.Now &&
+                d.tanggal_selesai >= DateTime.Now).FirstOrDefault();
+            if (diskount == null)
             {
                 return 0;
             }
-            return (int)diskon.potongan;
+            return (int)diskount.potongan;
         }
         public static void DeleteAllRoti()
         {

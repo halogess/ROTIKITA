@@ -78,4 +78,20 @@ namespace ROTIKITA.Contracts
             Subtotal = subtotal;
         }
     }
+    public class DiskonItemVo
+    {
+        public string kode_roti { get; set; }
+        public string nama_roti { get; set; }
+        public int potongan { get; set; }
+        public int quantity {  get; set; }
+        public int totalDiskon {  get; set; }
+        public DiskonItemVo(string kodeRoti, string namaRoti, int potongan, int quantity, int totalDiskon)
+        {
+            this.kode_roti = kodeRoti;
+            this.nama_roti = namaRoti;
+            this.potongan = potongan;
+            this.quantity = quantity;
+            this.totalDiskon = totalDiskon;
+        }
+    }
 }

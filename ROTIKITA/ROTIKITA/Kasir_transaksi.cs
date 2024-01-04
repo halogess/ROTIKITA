@@ -89,9 +89,24 @@ namespace ROTIKITA
                 AddNewItemToCart(kode_roti, jenis_roti, harga_label, quantity_label, tanggal_expired);
             }
             int diskonValue = RotiHandler.CekDiskon(kode_roti);
-            if(diskonValue != 0)
+            if (diskonValue != 0)
             {
-                diskonDataGridView.Rows.Add(kode_roti, jenis_roti,diskonValue);
+                bool exists = false;
+                for (int i = 0; i < diskonDataGridView.Rows.Count; i++)
+                {
+                    DataGridViewRow item = diskonDataGridView.Rows[i];
+                    if (item.Cells[0].Value.ToString().Equals(kode_roti))
+                    {
+                        diskonDataGridView.Rows[i].Cells[3].Value = int.Parse(item.Cells[3].Value.ToString()) + quantity_label;
+                        diskonDataGridView.Rows[i].Cells[4].Value = diskonValue * int.Parse(diskonDataGridView.Rows[i].Cells[3].Value.ToString());
+                        exists = true;
+                    }
+                }
+
+                if (!exists)
+                {
+                    diskonDataGridView.Rows.Add(kode_roti, jenis_roti, diskonValue, quantity_label, diskonValue * quantity_label);
+                }
             }
             UpdateCartSummary();
         }
@@ -172,13 +187,24 @@ namespace ROTIKITA
                 jumlahItem++;
                 totalHarga += float.Parse(item.Cells[5].Value.ToString());
             }
+            int totalDiskon = 0;
+            foreach (DataGridViewRow item in diskonDataGridView.Rows)
+            {
+                //string kode = item.Cells[0].Value.ToString();
+                //string namaRoti = item.Cells[1].Value.ToString();
+                //int potonganPerQty = int.Parse(item.Cells[2].Value.ToString());
+                //int quantity = int.Parse(item.Cells[3].Value.ToString());
+                totalDiskon += int.Parse(item.Cells[4].Value.ToString());
+                //diskonList.Add(new DiskonItemVo(kode, namaRoti, potonganPerQty, quantity, totalDiskon));
+            }
             jumlahItemLabel.Text = jumlahItem.ToString();
-            totalHargaLabel.Text = totalHarga.ToString();
+            totalHargaLabel.Text = (totalHarga-totalDiskon).ToString();
         }
 
         private void butButton_Click(object sender, EventArgs e)
         {
             List<BuyRotiItemVo> cartList = new List<BuyRotiItemVo>();
+            List<DiskonItemVo> diskonList = new List<DiskonItemVo>();
             foreach (DataGridViewRow item in keranjangDataGridView.Rows)
             {
                 string kode = item.Cells[0].Value.ToString();
@@ -191,6 +217,7 @@ namespace ROTIKITA
             int totalHarga = int.Parse(totalHargaLabel.Text);
             RotiHandler.BuyRoti(cartList, totalHarga);
             keranjangDataGridView.Rows.Clear();
+            diskonDataGridView.Rows.Clear();
             LoadListRoti();
         }
     }

@@ -65,6 +65,8 @@
             this.KodeRoti_Diskon = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NamaRoti = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Potongan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Quantity_Diskon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Total_Diskon = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.listRotiGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.qtyNumericUpDown)).BeginInit();
@@ -374,10 +376,11 @@
             // 
             this.totalHargaLabel.AutoSize = true;
             this.totalHargaLabel.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalHargaLabel.Location = new System.Drawing.Point(1128, 465);
+            this.totalHargaLabel.Location = new System.Drawing.Point(628, 509);
             this.totalHargaLabel.Name = "totalHargaLabel";
-            this.totalHargaLabel.Size = new System.Drawing.Size(0, 24);
+            this.totalHargaLabel.Size = new System.Drawing.Size(21, 24);
             this.totalHargaLabel.TabIndex = 32;
+            this.totalHargaLabel.Text = "0";
             // 
             // butButton
             // 
@@ -416,15 +419,20 @@
             // 
             // diskonDataGridView
             // 
+            this.diskonDataGridView.AllowUserToAddRows = false;
+            this.diskonDataGridView.AllowUserToDeleteRows = false;
             this.diskonDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.diskonDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.diskonDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.KodeRoti_Diskon,
             this.NamaRoti,
-            this.Potongan});
+            this.Potongan,
+            this.Quantity_Diskon,
+            this.Total_Diskon});
             this.diskonDataGridView.GridColor = System.Drawing.Color.Black;
             this.diskonDataGridView.Location = new System.Drawing.Point(838, 492);
             this.diskonDataGridView.Name = "diskonDataGridView";
+            this.diskonDataGridView.ReadOnly = true;
             this.diskonDataGridView.RowHeadersVisible = false;
             this.diskonDataGridView.RowHeadersWidth = 62;
             this.diskonDataGridView.RowTemplate.Height = 28;
@@ -436,6 +444,7 @@
             this.KodeRoti_Diskon.HeaderText = "Kode Roti";
             this.KodeRoti_Diskon.MinimumWidth = 8;
             this.KodeRoti_Diskon.Name = "KodeRoti_Diskon";
+            this.KodeRoti_Diskon.ReadOnly = true;
             // 
             // NamaRoti
             // 
@@ -451,11 +460,25 @@
             this.Potongan.Name = "Potongan";
             this.Potongan.ReadOnly = true;
             // 
+            // Quantity_Diskon
+            // 
+            this.Quantity_Diskon.HeaderText = "Quantity";
+            this.Quantity_Diskon.MinimumWidth = 8;
+            this.Quantity_Diskon.Name = "Quantity_Diskon";
+            this.Quantity_Diskon.ReadOnly = true;
+            // 
+            // Total_Diskon
+            // 
+            this.Total_Diskon.HeaderText = "Total";
+            this.Total_Diskon.MinimumWidth = 8;
+            this.Total_Diskon.Name = "Total_Diskon";
+            this.Total_Diskon.ReadOnly = true;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(1063, 431);
+            this.label1.Location = new System.Drawing.Point(1063, 420);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(141, 36);
             this.label1.TabIndex = 43;
@@ -497,7 +520,6 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.keranjangDataGridView);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Name = "Kasir_transaksi";
             this.Text = "FormTransaksi";
             this.Load += new System.EventHandler(this.FormTransaksi_Load);
             ((System.ComponentModel.ISupportInitialize)(this.listRotiGridView)).EndInit();
@@ -548,6 +570,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NamaRoti;
         private System.Windows.Forms.DataGridViewTextBoxColumn Potongan;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Quantity_Diskon;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Total_Diskon;
     }
 
 }

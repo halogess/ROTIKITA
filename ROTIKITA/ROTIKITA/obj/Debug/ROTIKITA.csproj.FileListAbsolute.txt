@@ -130,3 +130,4 @@ D:\Data\VSCode\C#\ROTIKITA\ROTIKITA\ROTIKITA\bin\Debug\stdole.dll
 D:\Data\VSCode\C#\ROTIKITA\ROTIKITA\ROTIKITA\bin\Debug\EntityFramework.xml
 D:\Data\VSCode\C#\ROTIKITA\ROTIKITA\ROTIKITA\bin\Debug\EntityFramework.SqlServer.xml
 D:\Data\VSCode\C#\ROTIKITA\ROTIKITA\ROTIKITA\obj\Debug\ROTIKITA.csproj.CopyComplete
+D:\Data\VSCode\C#\ROTIKITA\ROTIKITA\ROTIKITA\obj\Debug\ROTIKITA.FormHistory.resources
