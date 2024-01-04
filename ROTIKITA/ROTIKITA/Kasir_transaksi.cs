@@ -229,6 +229,21 @@ namespace ROTIKITA
             diskonDataGridView.Rows.Clear();
             LoadListRoti();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if(RotiHandler.HEADER_HTRANS.Length == 10)
+            {
+                Hide();
+                FormStruk frS = new FormStruk(RotiHandler.HEADER_HTRANS);
+                frS.ShowDialog();
+                Show();
+            }
+            else
+            {
+                MessageBox.Show("BELUM MELAKUKAN TRANSAKSI");
+            }
+        }
     }
 
 }

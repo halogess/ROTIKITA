@@ -85,11 +85,23 @@
       <DependentUpon>CrystalReport1.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="CrystalReport2.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport2.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="FormHistory.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormHistory.Designer.cs">
       <DependentUpon>FormHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormStruk.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormStruk.Designer.cs">
+      <DependentUpon>FormStruk.cs</DependentUpon>
     </Compile>
     <Compile Include="RoundedPanel.cs">
       <SubType>Component</SubType>
@@ -225,11 +237,18 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrystalReport1.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReport2.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport2.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormHistory.resx">
       <DependentUpon>FormHistory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormStruk.resx">
+      <DependentUpon>FormStruk.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Kasir_menu.resx">
       <DependentUpon>Kasir_menu.cs</DependentUpon>
