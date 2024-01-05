@@ -209,6 +209,12 @@
     <Compile Include="dtran.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Admin_bundle_edit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin_bundle_edit.Designer.cs">
+      <DependentUpon>Admin_bundle_edit.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormHistory.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -320,6 +326,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Admin_bundle.resx">
       <DependentUpon>Admin_bundle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin_bundle_edit.resx">
+      <DependentUpon>Admin_bundle_edit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Admin_daftar.resx">
       <DependentUpon>Admin_daftar.cs</DependentUpon>

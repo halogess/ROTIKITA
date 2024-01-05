@@ -274,6 +274,7 @@ namespace ROTIKITA
         private void load_dgvBundle()
         {
             dgv_bundle.DataSource = (from h in db.hbundles
+                                     where h.tanggal_selesai > DateTime.Now
                                      select new
                                      {
                                          Kode = h.kode_bundle,
@@ -324,6 +325,16 @@ namespace ROTIKITA
         private void dgv_diskon_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void dgv_bundle_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Hide();
+            Admin_bundle_edit form = new Admin_bundle_edit(dgv_bundle.Rows[e.RowIndex].Cells[0].Value.ToString());
+            form.ShowDialog();
+            load_dgvBundle();
+            load_DgvRoti();
+            Show();
         }
     }
 }
