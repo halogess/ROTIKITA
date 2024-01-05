@@ -1,12 +1,15 @@
-﻿using System;
+﻿using ROTIKITA.Controller;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 
 namespace ROTIKITA
 {
@@ -19,7 +22,7 @@ namespace ROTIKITA
 
         private void Admin_menu_Load(object sender, EventArgs e)
         {
-
+            nama.Text = UserHandler.nama;
         }
 
         private void btn_daftar_Click(object sender, EventArgs e)
@@ -60,6 +63,16 @@ namespace ROTIKITA
             FormHistory formHistory = new FormHistory();
             formHistory.ShowDialog();
             Show();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_logout_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

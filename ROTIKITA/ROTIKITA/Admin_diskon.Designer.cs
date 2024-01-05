@@ -329,22 +329,24 @@
             this.dgv_bundle.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_bundle.Size = new System.Drawing.Size(629, 259);
             this.dgv_bundle.TabIndex = 7;
+            this.dgv_bundle.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_bundle_CellContentClick);
             // 
             // Admin_diskon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(189)))), ((int)(((byte)(51)))));
-            this.ClientSize = new System.Drawing.Size(913, 487);
+            this.ClientSize = new System.Drawing.Size(1071, 487);
             this.Controls.Add(this.dgv_bundle);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dgv_diskon);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Admin_diskon";
             this.Text = "FormDiskon";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FormDiskon_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_roti)).EndInit();
             this.groupBox1.ResumeLayout(false);

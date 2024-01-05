@@ -143,5 +143,10 @@ namespace ROTIKITA
                 dateTimePicker1.Value = DateTime.Now;
             }
         }
+
+        private void btn_back_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

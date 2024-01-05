@@ -28,52 +28,94 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Owner_menu));
             this.btn_pegawai = new System.Windows.Forms.Button();
             this.btn_report = new System.Windows.Forms.Button();
             this.btn_history = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.btn_logout = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btn_pegawai
             // 
-            this.btn_pegawai.Location = new System.Drawing.Point(24, 41);
+            this.btn_pegawai.ImageKey = "owner_pegawai.png";
+            this.btn_pegawai.ImageList = this.imageList1;
+            this.btn_pegawai.Location = new System.Drawing.Point(68, 85);
             this.btn_pegawai.Name = "btn_pegawai";
-            this.btn_pegawai.Size = new System.Drawing.Size(159, 143);
+            this.btn_pegawai.Size = new System.Drawing.Size(250, 250);
             this.btn_pegawai.TabIndex = 0;
-            this.btn_pegawai.Text = "Daftar Pegawai";
             this.btn_pegawai.UseVisualStyleBackColor = true;
             this.btn_pegawai.Click += new System.EventHandler(this.btn_pegawai_Click);
             // 
             // btn_report
             // 
-            this.btn_report.Location = new System.Drawing.Point(212, 41);
+            this.btn_report.ImageKey = "owner_report.png";
+            this.btn_report.ImageList = this.imageList1;
+            this.btn_report.Location = new System.Drawing.Point(324, 85);
             this.btn_report.Name = "btn_report";
-            this.btn_report.Size = new System.Drawing.Size(159, 143);
+            this.btn_report.Size = new System.Drawing.Size(250, 250);
             this.btn_report.TabIndex = 1;
-            this.btn_report.Text = "Report";
             this.btn_report.UseVisualStyleBackColor = true;
             this.btn_report.Click += new System.EventHandler(this.btn_report_Click);
             // 
             // btn_history
             // 
-            this.btn_history.Location = new System.Drawing.Point(388, 41);
+            this.btn_history.ImageKey = "history.png";
+            this.btn_history.ImageList = this.imageList1;
+            this.btn_history.Location = new System.Drawing.Point(68, 341);
             this.btn_history.Name = "btn_history";
-            this.btn_history.Size = new System.Drawing.Size(159, 143);
+            this.btn_history.Size = new System.Drawing.Size(250, 250);
             this.btn_history.TabIndex = 2;
-            this.btn_history.Text = "History";
             this.btn_history.UseVisualStyleBackColor = true;
             this.btn_history.Click += new System.EventHandler(this.btn_history_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(64, 39);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(172, 24);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Welcome, Owner";
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "owner_pegawai.png");
+            this.imageList1.Images.SetKeyName(1, "owner_report.png");
+            this.imageList1.Images.SetKeyName(2, "history.png");
+            this.imageList1.Images.SetKeyName(3, "logout.png");
+            // 
+            // btn_logout
+            // 
+            this.btn_logout.ImageKey = "logout.png";
+            this.btn_logout.ImageList = this.imageList1;
+            this.btn_logout.Location = new System.Drawing.Point(324, 341);
+            this.btn_logout.Name = "btn_logout";
+            this.btn_logout.Size = new System.Drawing.Size(250, 250);
+            this.btn_logout.TabIndex = 10;
+            this.btn_logout.UseVisualStyleBackColor = true;
+            this.btn_logout.Click += new System.EventHandler(this.btn_logout_Click);
             // 
             // Owner_menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(189)))), ((int)(((byte)(51)))));
+            this.ClientSize = new System.Drawing.Size(638, 654);
+            this.Controls.Add(this.btn_logout);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_history);
             this.Controls.Add(this.btn_report);
             this.Controls.Add(this.btn_pegawai);
             this.Name = "Owner_menu";
             this.Text = "Form1";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -82,5 +124,8 @@
         private System.Windows.Forms.Button btn_pegawai;
         private System.Windows.Forms.Button btn_report;
         private System.Windows.Forms.Button btn_history;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.Button btn_logout;
     }
 }

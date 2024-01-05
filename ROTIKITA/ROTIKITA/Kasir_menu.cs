@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ROTIKITA.Controller;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,7 @@ namespace ROTIKITA
         public Kasir_menu()
         {
             InitializeComponent();
+            nama.Text = UserHandler.nama;
         }
 
         private void btn_transaksi_Click(object sender, EventArgs e)
@@ -36,6 +38,11 @@ namespace ROTIKITA
         private void Kasir_menu_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

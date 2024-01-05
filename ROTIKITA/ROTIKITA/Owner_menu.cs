@@ -41,5 +41,10 @@ namespace ROTIKITA
             owner_History.ShowDialog();
             Show();
         }
+
+        private void btn_logout_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

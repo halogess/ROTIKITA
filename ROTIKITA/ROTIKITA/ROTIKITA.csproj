@@ -97,6 +97,12 @@
     <Compile Include="dtran.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Admin_bundle_edit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin_bundle_edit.Designer.cs">
+      <DependentUpon>Admin_bundle_edit.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormHistory.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -209,6 +215,9 @@
     <EmbeddedResource Include="Admin_bundle.resx">
       <DependentUpon>Admin_bundle.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Admin_bundle_edit.resx">
+      <DependentUpon>Admin_bundle_edit.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Admin_daftar.resx">
       <DependentUpon>Admin_daftar.cs</DependentUpon>
     </EmbeddedResource>
@@ -257,6 +266,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EntityDeploy Include="Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
@@ -294,6 +304,7 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\Logo.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
