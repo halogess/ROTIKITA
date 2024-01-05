@@ -29,6 +29,13 @@ namespace ROTIKITA
         {
             listPegawaiView.DataSource = UserHandler.GetAllUsersVisible();
         }
+        public void clearInput()
+        {
+            TBNamaPegawai.Text = "";
+            TBPassPegawai.Text = "";
+            kasirRadioButton.Checked = false;
+            adminRadioButton.Checked = false;
+        }
         private void menuDaftarRotiButton_Click(object sender, EventArgs e)
         {
             string namaPegawai = TBNamaPegawai.Text;
@@ -44,6 +51,7 @@ namespace ROTIKITA
             }
             UserHandler.AddUser(namaPegawai, password, role);
             loadListUser();
+            clearInput();
         }
     }
 }
