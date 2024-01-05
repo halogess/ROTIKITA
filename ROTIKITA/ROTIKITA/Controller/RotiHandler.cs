@@ -45,7 +45,7 @@ namespace ROTIKITA.Controller
 
         public static int CekDiskon(string kode_roti)
         {
-            diskon diskount= db.diskons
+            diskon diskount = db.diskons
     .Where(d => d.kode_roti == kode_roti &&
                 d.tanggal_mulai <= DateTime.Now &&
                 d.tanggal_selesai >= DateTime.Now).FirstOrDefault();
@@ -355,10 +355,6 @@ namespace ROTIKITA.Controller
                 transaction.Rollback();
                 throw;
             }
-
-
         }
-
     }
 }
-    

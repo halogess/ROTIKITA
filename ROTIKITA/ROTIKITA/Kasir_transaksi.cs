@@ -244,12 +244,6 @@ namespace ROTIKITA
                 MessageBox.Show("BELUM MELAKUKAN TRANSAKSI");
             }
         }
-
-        private void button3_Click_1(object sender, EventArgs e)
-        {
-
-        }
     }
-
 }
 
