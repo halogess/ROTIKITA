@@ -10,7 +10,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-
 namespace ROTIKITA
 {
     public partial class Admin_menu : Form
